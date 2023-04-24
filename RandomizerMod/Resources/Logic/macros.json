@@ -44,6 +44,7 @@
   "INFECTION": "DREAMER",
   "DREAMER3": "DREAMER>2",
   "AWOKEN": "DREAMNAIL>2",
+  "ANYVERTICAL": "ANYCLAW | WINGS",
 
   // macros for charms with the ability to equip
   "GLOWINGWOMB": "$EQUIPPEDCHARM[Glowing_Womb]",

@@ -5,12 +5,37 @@
   },
   {
     "name": "Can_Replenish_Geo",
-    "logic": "Tutorial_01 | Can_Replenish_Geo-Crossroads | Fungus1_01[right1] | Fungus2_03[left1] | Fungus2_06[top1] | Fungus2_12[left1] | Fungus2_14[top1] | Deepnest_41[left1] + (DARKROOMS | LANTERN) | Ruins1_01[left1] | Ruins1_17[right1] | Ruins2_04[right2] | Ruins2_06[right2] | Abyss_04[left1] | Abyss_12[right1] | Fungus3_40[top1] | Mines_02[left1] | Cliffs_02[left1] | Deepnest_East_01[bot1] | Deepnest_East_03[left1] | Deepnest_East_07[left2] | Deepnest_East_08[top1] | Waterways_02[top1] | Waterways_01[right1] | Waterways_04b[left1]",
+    "logic": "Tutorial_01[right1] | Can_Replenish_Geo-Crossroads | Fungus1_01[right1] | Fungus2_03[left1] | Fungus2_06[top1] | Fungus2_12[left1] | Fungus2_14[top1] | Deepnest_41[left1] + (DARKROOMS | LANTERN) | Ruins1_01[left1] | Ruins1_17[right1] | Ruins2_04[right2] | Ruins2_06[right2] | Abyss_04[left1] | Abyss_12[right1] | Fungus3_40[top1] | Mines_02[left1] | Cliffs_02[left1] | Deepnest_East_01[bot1] | Deepnest_East_03[left1] | Deepnest_East_07[left2] | Deepnest_East_08[top1] | Waterways_02[top1] | Waterways_01[right1] | Waterways_04b[left1]",
+    "Stateless": true
+  },
+  {
+    "name": "Activated_Dirtmouth_Elevator_Lever",
+    "logic": "Town[right1]",
     "Stateless": true
   },
   {
     "name": "Can_Replenish_Geo-Crossroads",
-    "logic": "Crossroads_01[top1] | Crossroads_03 | Crossroads_04[door1] | Crossroads_05[left1] | Crossroads_07 | Crossroads_08 | Crossroads_11_alt[left1] + INFECTED | Crossroads_12[right1] + INFECTED | Crossroads_13[left1] | Crossroads_15[left1] | Crossroads_16[left1] | Crossroads_19 | Crossroads_21 | Crossroads_22[bot1] | Crossroads_25[right1] | Crossroads_27 | Crossroads_35[right1] | Crossroads_37[right1] | Crossroads_39[left1] | Crossroads_40[left1] | Crossroads_42[left1] | Crossroads_48[left1] | Crossroads_ShamanTemple[left1]",
+    "logic": "Crossroads_01[top1] | Crossroads_03[right1] | Crossroads_04[door1] | Crossroads_05[left1] | Crossroads_07[left1] | Crossroads_08[left1] | Crossroads_11_alt[left1] + INFECTED | Crossroads_12[right1] + INFECTED | Crossroads_13[left1] | Crossroads_15[left1] | Crossroads_16[left1] | Crossroads_19[left1] | Crossroads_21[left1] | Crossroads_22[bot1] | Crossroads_25[right1] | Crossroads_27[right1] | Crossroads_35[right1] | Crossroads_37[right1] | Crossroads_39[left1] | Crossroads_40[left1] | Crossroads_42[left1] | Crossroads_48[left1] | Crossroads_ShamanTemple[left1]",
+    "Stateless": true
+  },
+  {
+    "name": "Activated_Crossroads_East_Switch",
+    "logic": "Crossroads_03[right1]",
+    "Stateless": true
+  },
+  {
+    "name": "Glowing_Womb_Entrance_Collapse",
+    "logic": "Crossroads_21[7,22]",
+    "Stateless": true
+  },
+  {
+    "name": "Sly_Exit_Floor",
+    "logic": "Crossroads_04[door_Mender_House]",
+    "Stateless": true
+  },
+  {
+    "name": "Crossroads_Mask_Shard_Exit_Wall",
+    "logic": "Crossroads_13[3,22]",
     "Stateless": true
   },
   {
@@ -84,16 +109,13 @@
     "logic": "White_Palace_20[bot1] + Completed_Path_of_Pain"
   },
   {
-    "name": "Upper_Tram",
-    "logic": "TRAM + (Crossroads_46[left1] | Crossroads_46b[right1]) | Bench-Upper_Tram"
-  },
-  {
-    "name": "Lower_Tram",
-    "logic": "TRAM + (Abyss_03 | Abyss_03_b | Abyss_03_c) | Bench-Lower_Tram"
+    "name": "Activated_Left_Elevator",
+    "logic": "Crossroads_49b[right1] + NONRANDOMELEVATORS | Elevator_Pass",
+    "Stateless": true
   },
   {
     "name": "Left_Elevator",
-    "logic": "(Crossroads_49[left1] | Crossroads_49[right1] | Crossroads_49b[right1]) + (Crossroads_49b[right1] + NONRANDOMELEVATORS | Elevator_Pass)"
+    "logic": "(Crossroads_49[left1] | Crossroads_49[right1] | Crossroads_49b[right1]) + Activated_Left_Elevator"
   },
   {
     "name": "Right_Elevator",
@@ -117,17 +139,17 @@
   },
   {
     "name": "Defeated_Gruz_Mother",
-    "logic": "(Crossroads_04[left1] | Crossroads_04[top1] | Crossroads_04[door_Mender_House] | Crossroads_04[door1] | Crossroads_04[door_charmshop] | Crossroads_04[right1]) + COMBAT[Gruz_Mother]",
+    "logic": "Crossroads_04[left1] + COMBAT[Gruz_Mother]",
     "Stateless": true
   },
   {
     "name": "Defeated_False_Knight",
-    "logic": "(Crossroads_10[right1] | Crossroads_10[left1] + (ANYCLAW | WINGS)) + COMBAT[False_Knight]",
+    "logic": "Crossroads_10[11,27] + COMBAT[False_Knight]",
     "Stateless": true
   },
   {
     "name": "Defeated_Brooding_Mawlek",
-    "logic": "(Crossroads_09[left1] | Crossroads_09[right1]) + COMBAT[Brooding_Mawlek]",
+    "logic": "Crossroads_09[49,4] + COMBAT[Brooding_Mawlek]",
     "Stateless": true
   },
   {
@@ -301,7 +323,7 @@
   },
   {
     "name": "Defeated_Ancestral_Mound_Baldur",
-    "logic": "Crossroads_ShamanTemple[left1] + LEFTBALDURS + (UPWALLBREAK | (LEFTSUPERDASH + RIGHTCLAW | RIGHTSUPERDASH + LEFTCLAW) + OBSCURESKIPS)",
+    "logic": "Crossroads_ShamanTemple[52,21] + LEFTBALDURS",
     "Stateless": true
   },
   {
@@ -348,9 +370,10 @@
     "logic": "INCLUDEBENCHWARPSELECT + (Can_Warp_To_DG_Bench | Bench-Ancestral_Mound | Bench-Beast's_Den | Bench-Palace_Entrance | Bench-Palace_Atrium | Bench-Palace_Balcony | Bench-Upper_Tram | Bench-Lower_Tram)",
     "Stateless": true
   },
+  // TODO: Have all the stag transitions
   {
-    "name": "Can_Stag",
-    "logic": "(Room_Town_Stag_Station[left1] | Crossroads_47[right1] | Fungus1_16_alt[right1] | Fungus2_02[right1] | (Fungus3_40[top1] | Fungus3_40[right1]) | Ruins1_29[left1] | Ruins2_08[left1] | RestingGrounds_09[left1] | Deepnest_09[left1] | Abyss_22[left1]) + $STAGSTATEMODIFIER"
+    "name": "Stag",
+    "logic": "(Room_Town_Stag_Station[24,20] | Crossroads_47[right1] | Fungus1_16_alt[right1] | Fungus2_02[right1] | (Fungus3_40[top1] | Fungus3_40[right1]) | Ruins1_29[left1] | Ruins2_08[left1] | RestingGrounds_09[left1] | Deepnest_09[left1] | Abyss_22[left1]) + $STAGSTATEMODIFIER"
   },
   {
     "name": "Can_Visit_Lemm",
@@ -413,17 +436,17 @@
   },
   {
     "name": "Opened_Gardens_Stag_Exit",
-    "logic": "Fungus3_40[top1] + (RIGHTDASH | WINGS | RIGHTCLAW | LEFTCLAW + RIGHTSUPERDASH | ENEMYPOGOS | $SHADESKIP | SPELLAIRSTALL + $CASTSPELL[before:ROOMSOUL,after:ROOMSOUL]) | Fungus3_40[right1] | Queen's_Gardens_Stag + Can_Stag",
+    "logic": "Fungus3_40[top1] + (RIGHTDASH | WINGS | RIGHTCLAW | LEFTCLAW + RIGHTSUPERDASH | ENEMYPOGOS | $SHADESKIP | SPELLAIRSTALL + $CASTSPELL[before:ROOMSOUL,after:ROOMSOUL]) | Fungus3_40[right1] | Queen's_Gardens_Stag + Stag",
     "Stateless": true
   },
   {
     "name": "Opened_Mawlek_Wall",
-    "logic": "Crossroads_09[right1] | Crossroads_09[left1] + Defeated_Brooding_Mawlek",
+    "logic": "Crossroads_09[right1]",
     "Stateless": true
   },
   {
     "name": "Opened_Shaman_Pillar",
-    "logic": "Crossroads_06[left1] | Crossroads_06[door1] | Crossroads_06[right1] | INFECTION",
+    "logic": "Crossroads_06[left1] | INFECTION",
     "Stateless": true
   },
   {
@@ -684,7 +707,7 @@
   // note: bench waypoints may be modified or removed by connections which modify benches. They should not be relied on as room waypoints.
   {
     "name": "Bench-Dirtmouth",
-    "logic": "Town + $BENCHRESET | WARPSTARTTOBENCH + Bench-Dirtmouth"
+    "logic": "Town[bot1] + $BENCHRESET | WARPSTARTTOBENCH + Bench-Dirtmouth"
   },
   {
     "name": "Bench-Mato",
@@ -708,7 +731,7 @@
   },
   {
     "name": "Bench-Black_Egg_Temple",
-    "logic": "Room_temple[left1] + Opened_Black_Egg_Temple + $BENCHRESET | WARPSTARTTOBENCH + Bench-Black_Egg_Temple"
+    "logic": "Room_Final_Boss_Atrium[left1] + $BENCHRESET | WARPSTARTTOBENCH + Bench-Black_Egg_Temple"
   },
   {
     "name": "Bench-Waterfall",
@@ -856,7 +879,7 @@
   },
   {
     "name": "Bench-Gardens_Stag",
-    "logic": "Fungus3_40[right1] | Fungus3_40[top1] + (RIGHTDASH | WINGS | RIGHTCLAW | LEFTCLAW + RIGHTSUPERDASH | ENEMYPOGOS | $SHADESKIP | SPELLAIRSTALL + $CASTSPELL[before:ROOMSOUL,after:ROOMSOUL]) | Can_Stag + Queen's_Gardens_Stag"
+    "logic": "Fungus3_40[right1] | Fungus3_40[top1] + (RIGHTDASH | WINGS | RIGHTCLAW | LEFTCLAW + RIGHTSUPERDASH | ENEMYPOGOS | $SHADESKIP | SPELLAIRSTALL + $CASTSPELL[before:ROOMSOUL,after:ROOMSOUL]) | Stag + Queen's_Gardens_Stag"
   },
   {
     "name": "Bench-Palace_Entrance",
@@ -872,56 +895,171 @@
   },
   {
     "name": "Bench-Upper_Tram",
-    "logic": "Upper_Tram + $BENCHRESET | WARPSTARTTOBENCH + Bench-Upper_Tram"
+    "logic": "Room_Tram_RG[14,11] + $BENCHRESET | WARPSTARTTOBENCH + Bench-Upper_Tram"
   },
   {
     "name": "Bench-Lower_Tram",
-    "logic": "Lower_Tram + $BENCHRESET | WARPSTARTTOBENCH + Bench-Lower_Tram"
+    "logic": "Room_Tram[14,11] + $BENCHRESET | WARPSTARTTOBENCH + Bench-Lower_Tram"
   },
   {
-    "name": "Tutorial_01",
-    "logic": "Tutorial_01[right1] | Tutorial_01[top1] | Tutorial_01[top2]"
+    "name": "Room_Final_Boss_Core[23,6]",
+    "logic": "Room_Final_Boss_Core[left1]"
   },
   {
-    "name": "Town",
-    "logic": "Town[left1] | Town[top1] | Town[bot1] | Town[right1] | Town[door_station] | Town[door_sly] | Town[door_mapper] | Town[door_bretta] | Town[door_jiji] | Town[room_grimm] | Town[room_divine] | Bench-Dirtmouth"
+    "name": "Room_Town_Stag_Station[24,20]",
+    "logic": "Room_Town_Stag_Station[left1] | Room_Town_Stag_Station[door_stagExit]"
   },
   {
-    "name": "Crossroads_03",
-    "logic": "Crossroads_03[right1] | Crossroads_03[right2] | Crossroads_03[left1] | Crossroads_03[left2] | Crossroads_03[bot1]"
+    "name": "Tutorial_01[2,65]",
+    "logic": "Tutorial_01[top2] | Tutorial_01[7,60] + ANYVERTICAL"
   },
   {
-    "name": "Crossroads_07",
-    "logic": "Crossroads_07[left1] | Crossroads_07[left2] | Crossroads_07[left3] | Crossroads_07[right1] | Crossroads_07[right2] | Crossroads_07[bot1]"
+    "name": "Tutorial_01[4,22]",
+    "logic": "Tutorial_01[right1] + ANYCLAW | Tutorial_01[7,60]"
   },
   {
-    "name": "Crossroads_08",
-    "logic": "Crossroads_08[left1] | Crossroads_08[left2] | Crossroads_08[right1] | Crossroads_08[right2]"
+    "name": "Tutorial_01[7,60]",
+    "logic": "Tutorial_01[2,65] | Tutorial_01[4,22] + ANYCLAW"
+  },
+  // Logic depends on whether or not flames are randomized. Need to revise
+  {
+    "name": "Grimm_Main_Tent[69,6]",
+    "logic": "Grimm_Main_Tent[left1] + Nightmare_Lantern_Lit | Grimm_Main_Tent[121,6] + Defeated_Grimm"
   },
   {
-    "name": "Crossroads_14",
-    "logic": "Crossroads_14[left1] | Crossroads_14[left2] | Crossroads_14[right1] | Crossroads_14[right2]"
+    "name": "Grimm_Main_Tent[73,44]",
+    "logic": "Grimm_Main_Tent[121,6] + ANYCLAW + WINGS"
   },
   {
-    "name": "Crossroads_18",
-    "logic": "Crossroads_18[right1] + (LEFTDASH | WINGS | INFECTED | LEFTCLAW + SPELLAIRSTALL + $CASTSPELL[2,before:AREASOUL,after:ITEMSOUL] | $SLOPEBALL[before:AREASOUL,after:ITEMSOUL]) | Crossroads_18[bot1] | Crossroads_18[right2]"
+    "name": "Grimm_Main_Tent[121,6]",
+    "logic": "Grimm_Main_Tent[73,44] | Grimm_Main_Tent[69,6] + Defeated_Grimm"
   },
   {
-    "name": "Crossroads_19",
-    "logic": "Crossroads_19[left1] | Crossroads_19[left2] | Crossroads_19[right1] | Crossroads_19[top1]"
+    "name": "Crossroads_01[35,31]",
+    "logic": "Crossroads_01[top1] + ANYCLAW"
   },
   {
-    "name": "Crossroads_21",
-    "logic": "Crossroads_21[left1] | Crossroads_21[right1] | Crossroads_21[top1]"
+    "name": "Crossroads_04[104,15]",
+    "logic": "Crossroads_04[left1] + Defeated_Gruz_Mother | Crossroads_04[door_Mender_House] + WINGS | Crossroads_04[right1] + LEFTSUPERDASH"
   },
   {
-    "name": "Crossroads_27",
-    "logic": "Crossroads_27[right1] | Crossroads_27[bot1] | Crossroads_27[left1] | Crossroads_27[left2]"
+    "name": "Crossroads_05[53,16]",
+    "logic": "Crossroads_05[left1] + (RIGHTDASH | WINGS)"
   },
   {
-    "name": "Crossroads_33",
-    "logic": "Crossroads_33[top1] | Crossroads_33[left1] | Crossroads_33[left2] | Crossroads_33[right1] | Crossroads_33[right2]"
+    "name": "Crossroads_07[4,103]",
+    "logic": "Crossroads_07[left1] + (RIGHTCLAW | LEFTCLAW + WINGS) + UPWALLBREAK"
   },
+  {
+    "name": "Crossroads_09[49,4]",
+    "logic": "Crossroads_09[left1] | Crossroads_09[right1]"
+  },
+  {
+    "name": "Crossroads_10[2,12]",
+    "logic": "Crossroads_10[left1] + Defeated_False_Knight"
+  },
+  {
+    "name": "Crossroads_10[2,21]",
+    "logic": "Crossroads_10[left1] + ANYVERTICAL | Crossroads_10[11,27] + Defeated_False_Knight"
+  },
+  {
+    "name": "Crossroads_10[2,60]",
+    "logic": "Crossroads_10[8,50] + ANYVERTICAL | Crossroads_10[21,60] + Defeated_False_Knight"
+  },
+  {
+    "name": "Crossroads_10[5,40]",
+    "logic": "Crossroads_10[2,21] + ANYCLAW | Crossroads_10[8,50]"
+  },
+  {
+    "name": "Crossroads_10[8,50]",
+    "logic": "Crossroads_10[2,60] | Crossroads_10[5,40] + ANYVERTICAL"
+  },
+  {
+    "name": "Crossroads_10[11,27]",
+    "logic": "Crossroads_10[right1] | Crossroads_10[2,21] + ANYVERTICAL"
+  },
+  {
+    "name": "Crossroads_10[19,48]",
+    "logic": "Crossroads_10[right1] + (RIGHTCLAW | LEFTCLAW + WINGS) | Crossroads_10[61,53]"
+  },
+  {
+    "name": "Crossroads_10[21,60]",
+    "logic": "Crossroads_10[2,60] + Defeated_False_Knight | Crossroads_10[61,53] + ANYVERTICAL"
+  },
+  {
+    "name": "Crossroads_10[61,53]",
+    "logic": "Crossroads_10[21,60] | Crossroads_10[19,48] + ANYVERTICAL"
+  },
+  {
+    "name": "Crossroads_13[3,22]",
+    "logic": "Crossroads_13[6,42] | Crossroads_13[25,19] + Crossroads_Mask_Shard_Exit_Wall"
+  },
+  {
+    "name": "Crossroads_13[6,42]",
+    "logic": "Crossroads_13[3,22] + ANYCLAW + WINGS | Crossroads_13[25,19]"
+  },
+  {
+    "name": "Crossroads_13[25,19]",
+    "logic": "Crossroads_13[left1] + ANYVERTICAL | Crossroads_13[3,22] + Crossroads_Mask_Shard_Exit_Wall | Crossroads_13[6,42] + ANYVERTICAL"
+  },
+  {
+    "name": "Crossroads_18[18,14]",
+    "logic": "Crossroads_18[right2] + (LEFTDASH | WINGS | LEFTCLAW)"
+  },
+  {
+    "name": "Crossroads_21[7,22]",
+    "logic": "Crossroads_21[left1] + (LEFTSUPERDASH | Glowing_Womb_Entrance_Collapse + ANYVERTICAL)"
+  },
+  {
+    "name": "Crossroads_22[9,19]",
+    "logic": "Crossroads_22[bot1] + ANYVERTICAL"
+  },
+  {
+    "name": "Crossroads_35[63,23]",
+    "logic": "Crossroads_35[bot1] + RIGHTCLAW | Crossroads_35[58,38]"
+  },
+  {
+    "name": "Crossroads_35[58,38]",
+    "logic": "Crossroads_35[right1] + ACID | Crossroads_35[63,23] + RIGHTCLAW"
+  },
+  // TODO: depends on if VS is randomized
+  {
+    "name": "Crossroads_ShamanTemple[3,39]",
+    "logic": "Crossroads_ShamanTemple[18,60] | Crossroads_ShamanTemple[52,21] + RIGHTCLAW + UPWALLBREAK | Crossroads_ShamanTemple[95,42]"
+  },
+  {
+    "name": "Crossroads_ShamanTemple[18,60]",
+    "logic": "Crossroads_ShamanTemple[3,39] + WINGS"
+  },
+  {
+    "name": "Crossroads_ShamanTemple[34,21]",
+    "logic": "Crossroads_ShamanTemple[52,21] + Defeated_Ancestral_Mound_Baldur | Crossroads_ShamanTemple[43,8] + ANYCLAW + UPWALLBREAK"
+  },
+  {
+    "name": "Crossroads_ShamanTemple[43,8]",
+    "logic": "Crossroads_ShamanTemple[left1]"
+  },
+  {
+    "name": "Crossroads_ShamanTemple[52,21]",
+    "logic": "Crossroads_ShamanTemple[3,39] | Crossroads_ShamanTemple[34,21] + Defeated_Ancestral_Mound_Baldur"
+  },
+  {
+    "name": "Crossroads_ShamanTemple[95,42]",
+    "logic": "Crossroads_ShamanTemple[3,39] + UPWALLBREAK | Crossroads_ShamanTemple[43,8] + UPWALLBREAK"
+  },
+  // TODO: Below
+  //{
+  //  "name": "Crossroads_50[2,26]",
+  //  "logic": "Crossroads_50[left1]"
+  //},
+  //{
+  //  "name": "Crossroads_50[6,33]",
+  //  "logic": ""
+  //},
+  //{
+  //  "name": "Crossroads_50[65,38]",
+  //  "logic": ""
+  //},
   {
     "name": "Fungus1_11",
     "logic": "Fungus1_11[left1] | Fungus1_11[top1] | Fungus1_11[bot1] | Fungus1_11[right1] | Fungus1_11[right2]"
@@ -1087,16 +1225,16 @@
     "logic": "Hive_03_c[left1] | Hive_03_c[top1] | Hive_03_c[right2] | Hive_03_c[right3]"
   },
   {
-    "name": "Abyss_03",
-    "logic": "Abyss_03[top1] | (Abyss_03[bot1] + (RIGHTCLAW | WINGS)) | Abyss_03[bot2]"
+    "name": "Abyss_03[94,3]",
+    "logic": "Abyss_03[bot2]"
   },
   {
-    "name": "Abyss_03_b",
+    "name": "Abyss_03_b[46,3]",
     "logic": "Abyss_03_b[left1]"
   },
   {
-    "name": "Abyss_03_c",
-    "logic": "Abyss_03_c[top1] | Abyss_03_c[right1]"
+    "name": "Abyss_03_c[9,3]",
+    "logic": "Abyss_03_c[right1]"
   },
   {
     "name": "Abyss_04",
@@ -1221,8 +1359,8 @@
     "logic": "Ruins2_04[left1] | Ruins2_04[left2] | Ruins2_04[right1] | Ruins2_04[right2] | Ruins2_04[door_Ruin_House_01] | Ruins2_04[door_Ruin_House_02] | Ruins2_04[door_Ruin_House_03] | Ruins2_04[door_Ruin_Elevator]"
   },
   {
-    "name": "Ruins2_10",
-    "logic": "Ruins2_10[right1] | Ruins2_10[left1] | Right_Elevator"
+    "name": "Ruins2_10b[2,49]",
+    "logic": "Ruins2_10b[left1] | Ruins2_10b[right1] | Ruins2_10b[right2] + (ANYCLAW + WINGS | (LEFTDASH | LEFTSUPERDASH) + (RIGHTDASH | RIGHTSUPERDASH) + FULLCLAW)"
   },
   {
     "name": "RestingGrounds_02",
@@ -1319,5 +1457,13 @@
   {
     "name": "Abyss_05",
     "logic": "Abyss_05[left1] | Abyss_05[right1] | Warp-White_Palace_Entrance_to_Palace_Grounds | Warp-White_Palace_Atrium_to_Palace_Grounds"
+  },
+  {
+    "name": "Room_Tram_RG[14,11]",
+    "logic": "Room_Tram_RG[door1] | Bench-Upper_Tram"
+  },
+  {
+    "name": "Room_Tram[14,11]",
+    "logic": "Room_Tram[door1] | Bench-Lower_Tram"
   }
 ]

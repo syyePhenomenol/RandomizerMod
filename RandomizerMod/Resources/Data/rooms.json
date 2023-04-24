@@ -604,6 +604,11 @@
     "MapArea": "Dirtmouth",
     "TitledArea": "Dirtmouth"
   },
+  "Room_Bretta_Basement": {
+    "SceneName": "Room_Bretta_Basement",
+    "MapArea": "Dirtmouth",
+    "TitledArea": "Dirtmouth"
+  },
   "Room_mapper": {
     "SceneName": "Room_mapper",
     "MapArea": "Dirtmouth",
@@ -614,8 +619,18 @@
     "MapArea": "Dirtmouth",
     "TitledArea": "Dirtmouth"
   },
+  "Room_Jinn": {
+    "SceneName": "Room_Jinn",
+    "MapArea": "Dirtmouth",
+    "TitledArea": "Dirtmouth"
+  },
   "Room_shop": {
     "SceneName": "Room_shop",
+    "MapArea": "Dirtmouth",
+    "TitledArea": "Dirtmouth"
+  },
+  "Room_Sly_Storeroom": {
+    "SceneName": "Room_Sly_Storeroom",
     "MapArea": "Dirtmouth",
     "TitledArea": "Dirtmouth"
   },
@@ -936,6 +951,16 @@
   },
   "Room_temple": {
     "SceneName": "Room_temple",
+    "MapArea": "Forgotten Crossroads",
+    "TitledArea": "Black Egg Temple"
+  },
+  "Room_Final_Boss_Atrium": {
+    "SceneName": "Room_Final_Boss_Atrium",
+    "MapArea": "Forgotten Crossroads",
+    "TitledArea": "Black Egg Temple"
+  },
+  "Room_Final_Boss_Core": {
+    "SceneName": "Room_Final_Boss_Core",
     "MapArea": "Forgotten Crossroads",
     "TitledArea": "Black Egg Temple"
   },
@@ -1818,5 +1843,15 @@
     "SceneName": "White_Palace_20",
     "MapArea": "White Palace",
     "TitledArea": "Path of Pain"
+  },
+  "Room_Tram_RG": {
+    "SceneName": "Room_Tram_RG",
+    "MapArea": "Forgotten Crossroads",
+    "TitledArea": "Forgotten Crossroads"
+  },
+  "Room_Tram": {
+    "SceneName": "Room_Tram",
+    "MapArea": "Ancient Basin",
+    "TitledArea": "Ancient Basin"
   }
 }

@@ -2,14 +2,42 @@
   {
     "sceneName": "Room_temple",
     "gateName": "left1",
-    "logic": "Room_temple[left1] | Bench-Black_Egg_Temple",
+    "logic": "Room_temple[left1] | Room_temple[door1]",
     "oneWayType": "TwoWay",
     "Name": "Room_temple[left1]"
   },
   {
+    "sceneName": "Room_temple",
+    "gateName": "door1",
+    "logic": "Room_temple[door1] | Room_temple[left1] + Opened_Black_Egg_Temple",
+    "oneWayType": "TwoWay",
+    "Name": "Room_temple[door1]"
+  },
+  {
+    "sceneName": "Room_Final_Boss_Atrium",
+    "gateName": "left1",
+    "logic": "Room_Final_Boss_Atrium[left1] | Room_Final_Boss_Atrium[right1] | Bench-Black_Egg_Temple",
+    "oneWayType": "TwoWay",
+    "Name": "Room_Final_Boss_Atrium[left1]"
+  },
+  {
+    "sceneName": "Room_Final_Boss_Atrium",
+    "gateName": "right1",
+    "logic": "Room_Final_Boss_Atrium[right1] | Room_Final_Boss_Atrium[left1]",
+    "oneWayType": "TwoWay",
+    "Name": "Room_Final_Boss_Atrium[right1]"
+  },
+  {
+    "sceneName": "Room_Final_Boss_Core",
+    "gateName": "left1",
+    "logic": "Room_Final_Boss_Core[left1]",
+    "oneWayType": "TwoWay",
+    "Name": "Room_Final_Boss_Core[left1]"
+  },
+  {
     "sceneName": "Tutorial_01",
     "gateName": "right1",
-    "logic": "Tutorial_01[right1] | Tutorial_01",
+    "logic": "Tutorial_01[right1] | Tutorial_01[top1] | Tutorial_01[4,22]",
     "oneWayType": "TwoWay",
     "Name": "Tutorial_01[right1]"
   },
@@ -23,28 +51,28 @@
   {
     "sceneName": "Tutorial_01",
     "gateName": "top2",
-    "logic": "Tutorial_01[top2] | (ANYCLAW | WINGS + COMPLEXSKIPS + ENEMYPOGOS | $SHRIEKPOGO[1,2]) + Tutorial_01",
+    "logic": "Tutorial_01[top2] | Tutorial_01[2,65] + ANYVERTICAL",
     "oneWayType": "TwoWay",
     "Name": "Tutorial_01[top2]"
   },
   {
     "sceneName": "Town",
     "gateName": "left1",
-    "logic": "Town[left1] | Town + (LEFTCLAW | (Town[right1] + LEFTSUPERDASH))",
+    "logic": "Town[left1] | Town[bot1] + LEFTCLAW | Town[right1] + Activated_Dirtmouth_Elevator_Lever + LEFTSUPERDASH",
     "oneWayType": "TwoWay",
     "Name": "Town[left1]"
   },
   {
     "sceneName": "Town",
     "gateName": "bot1",
-    "logic": "Town[bot1] | Town",
+    "logic": "Town[bot1] | Town[left1] | Town[right1] | Town[top1] | Town[door_station] | Town[door_sly] | Town[door_mapper] | Town[door_jiji] | Town[door_bretta] | Town[room_divine] | Town[room_grimm] | Bench-Dirtmouth",
     "oneWayType": "TwoWay",
     "Name": "Town[bot1]"
   },
   {
     "sceneName": "Town",
     "gateName": "right1",
-    "logic": "Town[right1] | Town + (LEFTCLAW | Town[left1]) + WINGS + RIGHTSUPERDASH",
+    "logic": "Town[right1] | Town[left1] + RIGHTSUPERDASH + WINGS | Town[bot1] + Activated_Dirtmouth_Elevator_Lever",
     "oneWayType": "TwoWay",
     "Name": "Town[right1]"
   },
@@ -58,49 +86,49 @@
   {
     "sceneName": "Town",
     "gateName": "door_station",
-    "logic": "Town[door_station] | Town + Dirtmouth_Stag",
+    "logic": "Town[door_station] | Town[bot1] + Dirtmouth_Stag",
     "oneWayType": "TwoWay",
     "Name": "Town[door_station]"
   },
   {
     "sceneName": "Town",
     "gateName": "door_sly",
-    "logic": "Town[door_sly] | Town + Rescued_Sly",
+    "logic": "Town[door_sly] | Town[bot1] + Rescued_Sly",
     "oneWayType": "TwoWay",
     "Name": "Town[door_sly]"
   },
   {
     "sceneName": "Town",
     "gateName": "door_mapper",
-    "logic": "Town[door_mapper] | Town",
+    "logic": "Town[door_mapper] | Town[bot1]",
     "oneWayType": "TwoWay",
     "Name": "Town[door_mapper]"
   },
   {
     "sceneName": "Town",
     "gateName": "door_jiji",
-    "logic": "Town[door_jiji] | Town + JIJIUNLOCK",
+    "logic": "Town[door_jiji] | Town[bot1] + JIJIUNLOCK",
     "oneWayType": "TwoWay",
     "Name": "Town[door_jiji]"
   },
   {
     "sceneName": "Town",
     "gateName": "door_bretta",
-    "logic": "Town[door_bretta] | Town + Rescued_Bretta",
+    "logic": "Town[door_bretta] | Town[bot1] + Rescued_Bretta",
     "oneWayType": "TwoWay",
     "Name": "Town[door_bretta]"
   },
   {
     "sceneName": "Town",
     "gateName": "room_divine",
-    "logic": "Town[room_divine] | Town + Nightmare_Lantern_Lit",
+    "logic": "Town[room_divine] | Town[bot1] + Nightmare_Lantern_Lit",
     "oneWayType": "TwoWay",
     "Name": "Town[room_divine]"
   },
   {
     "sceneName": "Town",
     "gateName": "room_grimm",
-    "logic": "Town[room_grimm] | Town + Nightmare_Lantern_Lit",
+    "logic": "Town[room_grimm] | Town[bot1] + Nightmare_Lantern_Lit",
     "oneWayType": "TwoWay",
     "Name": "Town[room_grimm]"
   },
@@ -112,11 +140,32 @@
     "Name": "Room_shop[left1]"
   },
   {
+    "sceneName": "Room_shop",
+    "gateName": "door1",
+    "logic": "Room_shop[door1] | Room_shop[left1] + Rescued_Sly + CYCLONE + DASHSLASH + GREATSLASH",
+    "oneWayType": "TwoWay",
+    "Name": "Room_shop[door1]"
+  },
+  {
+    "sceneName": "Room_Sly_Storeroom",
+    "gateName": "top1",
+    "logic": "Room_Sly_Storeroom[top1]",
+    "oneWayType": "TwoWay",
+    "Name": "Room_Sly_Storeroom[top1]"
+  },
+  {
     "sceneName": "Room_Town_Stag_Station",
     "gateName": "left1",
-    "logic": "Room_Town_Stag_Station[left1] | Dirtmouth_Stag + Can_Stag",
+    "logic": "Room_Town_Stag_Station[left1] | Room_Town_Stag_Station[24,20] + Dirtmouth_Stag",
     "oneWayType": "TwoWay",
     "Name": "Room_Town_Stag_Station[left1]"
+  },
+  {
+    "sceneName": "Room_Town_Stag_Station",
+    "gateName": "door_stagExit",
+    "logic": "Stag",
+    "oneWayType": "OneWayOut",
+    "Name": "Room_Town_Stag_Station[door_stagExit]"
   },
   {
     "sceneName": "Room_mapper",
@@ -128,9 +177,23 @@
   {
     "sceneName": "Room_Bretta",
     "gateName": "right1",
-    "logic": "Room_Bretta[right1]",
+    "logic": "Room_Bretta[right1] | Room_Bretta[door1]",
     "oneWayType": "TwoWay",
     "Name": "Room_Bretta[right1]"
+  },
+  {
+    "sceneName": "Room_Bretta",
+    "gateName": "door1",
+    "logic": "Room_Bretta[door1] | Room_Bretta[right1] + Rescued_Bretta + Defeated_Colosseum_Zote",
+    "oneWayType": "TwoWay",
+    "Name": "Room_Bretta[door1]"
+  },
+  {
+    "sceneName": "Room_Bretta_Basement",
+    "gateName": "top1",
+    "logic": "Room_Bretta_Basement[top1]",
+    "oneWayType": "TwoWay",
+    "Name": "Room_Bretta_Basement[top1]"
   },
   {
     "sceneName": "Room_Ouiji",
@@ -138,6 +201,13 @@
     "logic": "Room_Ouiji[left1]",
     "oneWayType": "TwoWay",
     "Name": "Room_Ouiji[left1]"
+  },
+  {
+    "sceneName": "Room_Jinn",
+    "gateName": "left1",
+    "logic": "Room_Jinn[left1] | Room_Ouiji[left1]",
+    "oneWayType": "TwoWay",
+    "Name": "Room_Jinn[left1]"
   },
   {
     "sceneName": "Grimm_Divine",
@@ -149,28 +219,28 @@
   {
     "sceneName": "Grimm_Main_Tent",
     "gateName": "left1",
-    "logic": "Grimm_Main_Tent[left1]",
+    "logic": "Grimm_Main_Tent[left1] | Grimm_Main_Tent[69,6] + Nightmare_Lantern_Lit",
     "oneWayType": "TwoWay",
     "Name": "Grimm_Main_Tent[left1]"
   },
   {
     "sceneName": "Crossroads_01",
     "gateName": "top1",
-    "logic": "Crossroads_01[top1] | Crossroads_01[left1] | Crossroads_01[right1]",
+    "logic": "Crossroads_01[top1] | Crossroads_01[left1] | Crossroads_01[right1] | Crossroads_01[35,31]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_01[top1]"
   },
   {
     "sceneName": "Crossroads_01",
     "gateName": "left1",
-    "logic": "Crossroads_01[left1] | Crossroads_01[top1] | Crossroads_01[right1]",
+    "logic": "Crossroads_01[left1] | Crossroads_01[top1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_01[left1]"
   },
   {
     "sceneName": "Crossroads_01",
     "gateName": "right1",
-    "logic": "Crossroads_01[right1] | Crossroads_01[top1] | Crossroads_01[left1]",
+    "logic": "Crossroads_01[right1] | Crossroads_01[top1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_01[right1]"
   },
@@ -184,105 +254,105 @@
   {
     "sceneName": "Crossroads_02",
     "gateName": "door1",
-    "logic": "Crossroads_02[door1] | Crossroads_02[left1] | Crossroads_02[right1]",
+    "logic": "Crossroads_02[door1] | Crossroads_02[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_02[door1]"
   },
   {
     "sceneName": "Crossroads_02",
     "gateName": "right1",
-    "logic": "Crossroads_02[right1] | Crossroads_02[left1] | Crossroads_02[door1]",
+    "logic": "Crossroads_02[right1] | Crossroads_02[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_02[right1]"
   },
   {
     "sceneName": "Crossroads_03",
     "gateName": "right1",
-    "logic": "Crossroads_03[right1] | Crossroads_03",
+    "logic": "Crossroads_03[right1] | Crossroads_03[right2] | Crossroads_03[left1] | Crossroads_03[left2] | Crossroads_03[bot1] | Crossroads_03[top1] + Activated_Crossroads_East_Switch",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_03[right1]"
   },
   {
     "sceneName": "Crossroads_03",
     "gateName": "right2",
-    "logic": "Crossroads_03[right2] | Crossroads_03",
+    "logic": "Crossroads_03[right2] | Crossroads_03[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_03[right2]"
   },
   {
     "sceneName": "Crossroads_03",
     "gateName": "left1",
-    "logic": "Crossroads_03[left1] | Crossroads_03",
+    "logic": "Crossroads_03[left1] | Crossroads_03[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_03[left1]"
   },
   {
     "sceneName": "Crossroads_03",
     "gateName": "left2",
-    "logic": "Crossroads_03[left2] | Crossroads_03",
+    "logic": "Crossroads_03[left2] | Crossroads_03[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_03[left2]"
   },
   {
     "sceneName": "Crossroads_03",
     "gateName": "bot1",
-    "logic": "Crossroads_03[bot1] | Crossroads_03",
+    "logic": "Crossroads_03[bot1] | Crossroads_03[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_03[bot1]"
   },
   {
     "sceneName": "Crossroads_03",
     "gateName": "top1",
-    "logic": "Crossroads_03[top1] | Crossroads_03",
+    "logic": "Crossroads_03[top1] | Crossroads_03[right1] + Activated_Crossroads_East_Switch",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_03[top1]"
   },
   {
     "sceneName": "Crossroads_04",
     "gateName": "left1",
-    "logic": "Crossroads_04[left1] | Crossroads_04[door_Mender_House] | Crossroads_04[door1] | Crossroads_04[door_charmshop] | Crossroads_04[right1] | Crossroads_04[top1]",
+    "logic": "Crossroads_04[left1] | Crossroads_04[top1] | Crossroads_04[door_Mender_House] | Crossroads_04[104,15] + Defeated_Gruz_Mother",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_04[left1]"
   },
   {
     "sceneName": "Crossroads_04",
     "gateName": "top1",
-    "logic": "Crossroads_04[top1] | Crossroads_04[door_Mender_House] | Crossroads_04[door1] | Crossroads_04[door_charmshop] | Crossroads_04[right1] | Crossroads_04[left1]",
+    "logic": "Crossroads_04[top1] | Crossroads_04[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_04[top1]"
   },
   {
     "sceneName": "Crossroads_04",
     "gateName": "door_Mender_House",
-    "logic": "Crossroads_04[door_Mender_House] | Crossroads_04[door1] | Crossroads_04[door_charmshop] | Crossroads_04[right1] | (Crossroads_04[left1] | Crossroads_04[top1]) + Defeated_Gruz_Mother",
+    "logic": "Crossroads_04[door_Mender_House] | Crossroads_04[left1] + Sly_Exit_Floor | Crossroads_04[door1] | Crossroads_04[door_charmshop] | Crossroads_04[104,15]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_04[door_Mender_House]"
   },
   {
     "sceneName": "Crossroads_04",
     "gateName": "door1",
-    "logic": "Crossroads_04[door1] | Crossroads_04[door_Mender_House] | Crossroads_04[door_charmshop] | Crossroads_04[right1] | (Crossroads_04[left1] | Crossroads_04[top1]) + Defeated_Gruz_Mother",
+    "logic": "Crossroads_04[door1] | Crossroads_04[door_Mender_House]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_04[door1]"
   },
   {
     "sceneName": "Crossroads_04",
     "gateName": "door_charmshop",
-    "logic": "Crossroads_04[door_charmshop] | Crossroads_04[right1] | (Crossroads_04[door1] | Crossroads_04[door_Mender_House] | (Crossroads_04[left1] | Crossroads_04[top1]) + Defeated_Gruz_Mother) + (RIGHTCLAW | RIGHTDASH | WINGS | RIGHTSUPERDASH | SPELLAIRSTALL + $CASTSPELL[3,before:AREASOUL] | $SHADESKIP | INFECTED) | Bench-Salubra",
+    "logic": "Crossroads_04[door_charmshop] | Crossroads_04[door_Mender_House] + (RIGHTDASH | RIGHTCLAW | WINGS) | Crossroads_04[right1] | Bench-Salubra",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_04[door_charmshop]"
   },
   {
     "sceneName": "Crossroads_04",
     "gateName": "right1",
-    "logic": "Crossroads_04[right1] | (Crossroads_04[door_Mender_House] | Crossroads_04[door1] | Crossroads_04[door_charmshop] | (Crossroads_04[left1] | Crossroads_04[top1]) + Defeated_Gruz_Mother) + (RIGHTCLAW + WINGS | LEFTCLAW + RIGHTSUPERDASH | INFECTED | $SHADESKIP + (RIGHTCLAW | WINGS) | COMPLEXSKIPS + SPELLAIRSTALL + DAMAGEBOOSTS + $SHADESKIP[2HITS] + $TAKEDAMAGE + $CASTSPELL[2,before:ROOMSOUL] + (DIFFICULTSKIPS | RIGHTDASH) | $SHRIEKPOGO[2,before:AREASOUL])",
+    "logic": "Crossroads_04[right1] | Crossroads_04[door_charmshop] + RIGHTCLAW + WINGS | Crossroads_04[104,15] + LEFTCLAW + RIGHTSUPERDASH",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_04[right1]"
   },
   {
     "sceneName": "Crossroads_05",
     "gateName": "left1",
-    "logic": "Crossroads_05[left1] | Crossroads_05[right1]",
+    "logic": "Crossroads_05[left1] | Crossroads_05[right1] | Crossroads_05[53,16]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_05[left1]"
   },
@@ -303,112 +373,112 @@
   {
     "sceneName": "Crossroads_06",
     "gateName": "door1",
-    "logic": "Crossroads_06[door1] | Crossroads_06[left1] | Crossroads_06[right1]",
+    "logic": "Crossroads_06[door1] | Crossroads_06[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_06[door1]"
   },
   {
     "sceneName": "Crossroads_06",
     "gateName": "right1",
-    "logic": "Crossroads_06[right1] | Crossroads_06[left1] | Crossroads_06[door1]",
+    "logic": "Crossroads_06[right1] | Crossroads_06[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_06[right1]"
   },
   {
     "sceneName": "Crossroads_07",
     "gateName": "left1",
-    "logic": "Crossroads_07[left1] | Crossroads_07",
+    "logic": "Crossroads_07[left1] | Crossroads_07[left2] | Crossroads_07[left3] | Crossroads_07[right1] | Crossroads_07[right2] | Crossroads_07[bot1] | Crossroads_07[4,103]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_07[left1]"
   },
   {
     "sceneName": "Crossroads_07",
     "gateName": "left2",
-    "logic": "Crossroads_07[left2] | Crossroads_07",
+    "logic": "Crossroads_07[left2] | Crossroads_07[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_07[left2]"
   },
   {
     "sceneName": "Crossroads_07",
     "gateName": "left3",
-    "logic": "Crossroads_07[left3] | Crossroads_07",
+    "logic": "Crossroads_07[left3] | Crossroads_07[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_07[left3]"
   },
   {
     "sceneName": "Crossroads_07",
     "gateName": "right1",
-    "logic": "Crossroads_07[right1] | Crossroads_07",
+    "logic": "Crossroads_07[right1] | Crossroads_07[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_07[right1]"
   },
   {
     "sceneName": "Crossroads_07",
     "gateName": "right2",
-    "logic": "Crossroads_07[right2] | Crossroads_07",
+    "logic": "Crossroads_07[right2] | Crossroads_07[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_07[right2]"
   },
   {
     "sceneName": "Crossroads_07",
     "gateName": "bot1",
-    "logic": "Crossroads_07[bot1] | Crossroads_07",
+    "logic": "Crossroads_07[bot1] | Crossroads_07[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_07[bot1]"
   },
   {
     "sceneName": "Crossroads_08",
     "gateName": "left1",
-    "logic": "Crossroads_08[left1] | Crossroads_08",
+    "logic": "Crossroads_08[left1] | Crossroads_08[left2] | Crossroads_08[right1] | Crossroads_08[right2]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_08[left1]"
   },
   {
     "sceneName": "Crossroads_08",
     "gateName": "left2",
-    "logic": "Crossroads_08[left2] | Crossroads_08",
+    "logic": "Crossroads_08[left2] | Crossroads_08[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_08[left2]"
   },
   {
     "sceneName": "Crossroads_08",
     "gateName": "right1",
-    "logic": "Crossroads_08[right1] | Crossroads_08",
+    "logic": "Crossroads_08[right1] | Crossroads_08[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_08[right1]"
   },
   {
     "sceneName": "Crossroads_08",
     "gateName": "right2",
-    "logic": "Crossroads_08[right2] | Crossroads_08",
+    "logic": "Crossroads_08[right2] | Crossroads_08[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_08[right2]"
   },
   {
     "sceneName": "Crossroads_09",
     "gateName": "left1",
-    "logic": "Crossroads_09[left1] | Crossroads_09[right1] + Defeated_Brooding_Mawlek",
+    "logic": "Crossroads_09[left1] | Crossroads_09[49,4] + Defeated_Brooding_Mawlek",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_09[left1]"
   },
   {
     "sceneName": "Crossroads_09",
     "gateName": "right1",
-    "logic": "Crossroads_09[right1] | Crossroads_09[left1] + Defeated_Brooding_Mawlek",
+    "logic": "Crossroads_09[right1] | Crossroads_09[49,4] + Defeated_Brooding_Mawlek",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_09[right1]"
   },
   {
     "sceneName": "Crossroads_10",
     "gateName": "left1",
-    "logic": "Crossroads_10[left1] | Crossroads_10[right1] + Defeated_False_Knight",
+    "logic": "Crossroads_10[left1] | Crossroads_10[right1] + Defeated_False_Knight | Crossroads_10[2,12] + Defeated_False_Knight | Crossroads_10[2,21]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_10[left1]"
   },
   {
     "sceneName": "Crossroads_10",
     "gateName": "right1",
-    "logic": "Crossroads_10[right1] | Crossroads_10[left1] + Defeated_False_Knight",
+    "logic": "Crossroads_10[right1] | Crossroads_10[left1] + Defeated_False_Knight | Crossroads_10[11,27] + Defeated_False_Knight | Crossroads_10[19,48]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_10[right1]"
   },
@@ -422,7 +492,7 @@
   {
     "sceneName": "Crossroads_11_alt",
     "gateName": "right1",
-    "logic": "Crossroads_11_alt[right1]",
+    "logic": "Crossroads_11_alt[right1] | Crossroads_11_alt[left1] + Defeated_Crossroads_Baldur",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_11_alt[right1]"
   },
@@ -443,7 +513,7 @@
   {
     "sceneName": "Crossroads_13",
     "gateName": "left1",
-    "logic": "Crossroads_13[left1] | Crossroads_13[right1]",
+    "logic": "Crossroads_13[left1] | Crossroads_13[right1] | Crossroads_13[25,19]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_13[left1]"
   },
@@ -457,28 +527,28 @@
   {
     "sceneName": "Crossroads_14",
     "gateName": "left1",
-    "logic": "Crossroads_14[left1] | Crossroads_14",
+    "logic": "Crossroads_14[left1] | Crossroads_14[left2] | Crossroads_14[right1] | Crossroads_14[right2]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_14[left1]"
   },
   {
     "sceneName": "Crossroads_14",
     "gateName": "left2",
-    "logic": "Crossroads_14[left2] | Crossroads_14",
+    "logic": "Crossroads_14[left2] | Crossroads_14[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_14[left2]"
   },
   {
     "sceneName": "Crossroads_14",
     "gateName": "right1",
-    "logic": "Crossroads_14[right1] | Crossroads_14",
+    "logic": "Crossroads_14[right1] | Crossroads_14[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_14[right1]"
   },
   {
     "sceneName": "Crossroads_14",
     "gateName": "right2",
-    "logic": "Crossroads_14[right2] | Crossroads_14",
+    "logic": "Crossroads_14[right2] | Crossroads_14[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_14[right2]"
   },
@@ -506,91 +576,91 @@
   {
     "sceneName": "Crossroads_16",
     "gateName": "right1",
-    "logic": "Crossroads_16[right1] | Crossroads_16[left1] | Crossroads_16[bot1]",
+    "logic": "Crossroads_16[right1] | Crossroads_16[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_16[right1]"
   },
   {
     "sceneName": "Crossroads_16",
     "gateName": "bot1",
-    "logic": "Crossroads_16[bot1] | Crossroads_16[left1] | Crossroads_16[right1]",
+    "logic": "Crossroads_16[bot1] | Crossroads_16[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_16[bot1]"
   },
   {
     "sceneName": "Crossroads_18",
     "gateName": "right1",
-    "logic": "Crossroads_18[right1] | Crossroads_18",
+    "logic": "Crossroads_18[right1] | Crossroads_18[right2]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_18[right1]"
   },
   {
     "sceneName": "Crossroads_18",
     "gateName": "right2",
-    "logic": "Crossroads_18[right2] | Crossroads_18",
+    "logic": "Crossroads_18[right2] | Crossroads_18[right1] + (LEFTDASH | WINGS) | Crossroads_18[bot1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_18[right2]"
   },
   {
     "sceneName": "Crossroads_18",
     "gateName": "bot1",
-    "logic": "Crossroads_18[bot1] | Crossroads_18",
+    "logic": "Crossroads_18[bot1] | Crossroads_18[right2]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_18[bot1]"
   },
   {
     "sceneName": "Crossroads_19",
     "gateName": "right1",
-    "logic": "Crossroads_19[right1] | Crossroads_19",
+    "logic": "Crossroads_19[right1] | Crossroads_19[top1] | Crossroads_19[left1] | Crossroads_19[left2]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_19[right1]"
   },
   {
     "sceneName": "Crossroads_19",
     "gateName": "top1",
-    "logic": "Crossroads_19[top1] | Crossroads_19",
+    "logic": "Crossroads_19[top1] | Crossroads_19[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_19[top1]"
   },
   {
     "sceneName": "Crossroads_19",
     "gateName": "left1",
-    "logic": "Crossroads_19[left1] | Crossroads_19",
+    "logic": "Crossroads_19[left1] | Crossroads_19[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_19[left1]"
   },
   {
     "sceneName": "Crossroads_19",
     "gateName": "left2",
-    "logic": "Crossroads_19[left2] | Crossroads_19",
+    "logic": "Crossroads_19[left2] | Crossroads_19[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_19[left2]"
   },
   {
     "sceneName": "Crossroads_21",
     "gateName": "left1",
-    "logic": "Crossroads_21[left1] | Crossroads_21",
+    "logic": "Crossroads_21[left1] | Crossroads_21[right1] | Crossroads_21[7,22] + (Glowing_Womb_Entrance_Collapse | LEFTCLAW + RIGHTSUPERDASH)",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_21[left1]"
   },
   {
     "sceneName": "Crossroads_21",
     "gateName": "right1",
-    "logic": "Crossroads_21[right1] | Crossroads_21",
+    "logic": "Crossroads_21[right1] | Crossroads_21[left1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_21[right1]"
   },
   {
     "sceneName": "Crossroads_21",
     "gateName": "top1",
-    "logic": "Crossroads_21[top1] + (WINGS | ANYCLAW | INFECTED) | Crossroads_21 + (ANYCLAW | WINGS | INFECTED) + (LEFTSUPERDASH | SPIKETUNNELS + LEFTDASH + (DASHMASTER | SPELLAIRSTALL + $CASTSPELL[2,before:ROOMSOUL,after:ROOMSOUL]))",
+    "logic": "Crossroads_21[7,22] + ANYVERTICAL",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_21[top1]"
   },
   {
     "sceneName": "Crossroads_22",
     "gateName": "bot1",
-    "logic": "Crossroads_22[bot1]",
+    "logic": "Crossroads_22[bot1] | Crossroads_22[9,19]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_22[bot1]"
   },
@@ -611,28 +681,28 @@
   {
     "sceneName": "Crossroads_27",
     "gateName": "right1",
-    "logic": "Crossroads_27[right1] | Crossroads_27",
+    "logic": "Crossroads_27[right1] | Crossroads_27[bot1] | Crossroads_27[left1] | Crossroads_27[left2]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_27[right1]"
   },
   {
     "sceneName": "Crossroads_27",
     "gateName": "bot1",
-    "logic": "Crossroads_27[bot1] | Crossroads_27",
+    "logic": "Crossroads_27[bot1] | Crossroads_27[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_27[bot1]"
   },
   {
     "sceneName": "Crossroads_27",
     "gateName": "left1",
-    "logic": "Crossroads_27[left1] | Crossroads_27",
+    "logic": "Crossroads_27[left1] | Crossroads_27[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_27[left1]"
   },
   {
     "sceneName": "Crossroads_27",
     "gateName": "left2",
-    "logic": "Crossroads_27[left2] | Crossroads_27",
+    "logic": "Crossroads_27[left2] | Crossroads_27[right1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_27[left2]"
   },
@@ -653,49 +723,49 @@
   {
     "sceneName": "Crossroads_33",
     "gateName": "top1",
-    "logic": "Crossroads_33[top1] | Crossroads_33",
+    "logic": "Crossroads_33[top1] | Crossroads_33[left1] | Crossroads_33[left2] | Crossroads_33[right1] | Crossroads_33[right2]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_33[top1]"
   },
   {
     "sceneName": "Crossroads_33",
     "gateName": "left1",
-    "logic": "Crossroads_33[left1] | Crossroads_33 + Opened_Mawlek_Wall",
+    "logic": "Crossroads_33[left1] | Crossroads_33[top1] + Opened_Mawlek_Wall",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_33[left1]"
   },
   {
     "sceneName": "Crossroads_33",
     "gateName": "left2",
-    "logic": "Crossroads_33[left2] | Crossroads_33",
+    "logic": "Crossroads_33[left2] | Crossroads_33[top1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_33[left2]"
   },
   {
     "sceneName": "Crossroads_33",
     "gateName": "right1",
-    "logic": "Crossroads_33[right1] | Crossroads_33 + Opened_Shaman_Pillar",
+    "logic": "Crossroads_33[right1] | Crossroads_33[top1] + Opened_Shaman_Pillar",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_33[right1]"
   },
   {
     "sceneName": "Crossroads_33",
     "gateName": "right2",
-    "logic": "Crossroads_33[right2] | Crossroads_33",
+    "logic": "Crossroads_33[right2] | Crossroads_33[top1]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_33[right2]"
   },
   {
     "sceneName": "Crossroads_35",
     "gateName": "bot1",
-    "logic": "Crossroads_35[bot1] | Crossroads_35[right1] + (ACID | (((LEFTCLAW + RIGHTSUPERDASH + (WINGS | RIGHTCLAW)) | (WINGS + RIGHTDASH)) + ACIDSKIPS))",
+    "logic": "Crossroads_35[bot1] | Crossroads_35[63,23]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_35[bot1]"
   },
   {
     "sceneName": "Crossroads_35",
     "gateName": "right1",
-    "logic": "Crossroads_35[right1] | Crossroads_35[bot1] + (RIGHTCLAW + (ACID | ACIDSKIPS + (LEFTSUPERDASH + LEFTCLAW | WINGS + LEFTDASH)) | ACID + $SHRIEKPOGO[1,2,before:ITEMSOUL] | ACIDSKIPS + LEFTDASH + $SHRIEKPOGO[1,2,1,before:ITEMSOUL])",
+    "logic": "Crossroads_35[right1] | Crossroads_35[58,38] + ACID",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_35[right1]"
   },
@@ -800,28 +870,42 @@
   {
     "sceneName": "Crossroads_46",
     "gateName": "left1",
-    "logic": "Crossroads_46[left1] | Upper_Tram",
+    "logic": "Crossroads_46[left1] | Crossroads_46[door_tram]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_46[left1]"
   },
   {
+    "sceneName": "Crossroads_46",
+    "gateName": "door_tram",
+    "logic": "Crossroads_46[left1] + TRAM | Room_Tram_RG[14,11]",
+    "oneWayType": "TwoWay",
+    "Name": "Crossroads_46[door_tram]"
+  },
+  {
     "sceneName": "Crossroads_46b",
     "gateName": "right1",
-    "logic": "Crossroads_46b[right1] | Upper_Tram",
+    "logic": "Crossroads_46b[right1] | Crossroads_46b[door_tram]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_46b[right1]"
   },
   {
+    "sceneName": "Crossroads_46b",
+    "gateName": "door_tram",
+    "logic": "Crossroads_46b[right1] + TRAM | Room_Tram_RG[14,11]",
+    "oneWayType": "TwoWay",
+    "Name": "Crossroads_46b[door_tram]"
+  },
+  {
     "sceneName": "Crossroads_ShamanTemple",
     "gateName": "left1",
-    "logic": "Crossroads_ShamanTemple[left1] | Bench-Ancestral_Mound",
+    "logic": "Crossroads_ShamanTemple[left1] | Crossroads_ShamanTemple[43,8] + Defeated_Ancestral_Mound_Baldur | Bench-Ancestral_Mound",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_ShamanTemple[left1]"
   },
   {
     "sceneName": "Crossroads_47",
     "gateName": "right1",
-    "logic": "Crossroads_47[right1] | Can_Stag + Crossroads_Stag | Bench-Crossroads_Stag",
+    "logic": "Crossroads_47[right1] | Stag + Crossroads_Stag | Bench-Crossroads_Stag",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_47[right1]"
   },
@@ -835,24 +919,39 @@
   {
     "sceneName": "Crossroads_49",
     "gateName": "right1",
-    "logic": "Crossroads_49[right1] | Left_Elevator",
+    "logic": "Crossroads_49[right1] | Crossroads_49[left1] + Activated_Left_Elevator | Crossroads_49[elev_entrance]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_49[right1]"
   },
   {
     "sceneName": "Crossroads_49",
     "gateName": "left1",
-    "logic": "Crossroads_49[left1] | Left_Elevator",
+    "logic": "Crossroads_49[left1] | Crossroads_49[right1] + Activated_Left_Elevator | Crossroads_49[elev_entrance]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_49[left1]"
   },
   {
+    "sceneName": "Crossroads_49",
+    "gateName": "elev_entrance",
+    "logic": "Left_Elevator",
+    "oneWayType": "OneWayOut",
+    "Name": "Crossroads_49[elev_entrance]"
+  },
+  {
     "sceneName": "Crossroads_49b",
     "gateName": "right1",
-    "logic": "Crossroads_49b[right1] | Left_Elevator",
+    "logic": "Crossroads_49b[right1] | Crossroads_49b[elev_entrance]",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_49b[right1]"
   },
+  {
+    "sceneName": "Crossroads_49b",
+    "gateName": "elev_entrance",
+    "logic": "Left_Elevator",
+    "oneWayType": "OneWayOut",
+    "Name": "Crossroads_49b[elev_entrance]"
+  },
+  // TODO: Below
   {
     "sceneName": "Crossroads_50",
     "gateName": "right1",
@@ -1164,7 +1263,7 @@
   {
     "sceneName": "Fungus1_16_alt",
     "gateName": "right1",
-    "logic": "Fungus1_16_alt[right1] | Can_Stag + Greenpath_Stag | Bench-Greenpath_Stag",
+    "logic": "Fungus1_16_alt[right1] | Stag + Greenpath_Stag | Bench-Greenpath_Stag",
     "oneWayType": "TwoWay",
     "Name": "Fungus1_16_alt[right1]"
   },
@@ -1787,7 +1886,7 @@
   {
     "sceneName": "Fungus2_02",
     "gateName": "right1",
-    "logic": "Fungus2_02[right1] | Can_Stag + Queen's_Station_Stag | Bench-Queen's_Station",
+    "logic": "Fungus2_02[right1] | Stag + Queen's_Station_Stag | Bench-Queen's_Station",
     "oneWayType": "TwoWay",
     "Name": "Fungus2_02[right1]"
   },
@@ -2361,7 +2460,7 @@
   {
     "sceneName": "Deepnest_09",
     "gateName": "left1",
-    "logic": "Deepnest_09[left1] | Can_Stag + Distant_Village_Stag",
+    "logic": "Deepnest_09[left1] | Stag + Distant_Village_Stag",
     "oneWayType": "TwoWay",
     "Name": "Deepnest_09[left1]"
   },
@@ -3425,44 +3524,66 @@
   {
     "sceneName": "Abyss_03",
     "gateName": "bot1",
-    "logic": "Abyss_03[bot1] | Abyss_03 | Lower_Tram",
+    "logic": "Abyss_03[bot1] | Abyss_03[bot2]",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03[bot1]"
   },
   {
     "sceneName": "Abyss_03",
     "gateName": "bot2",
-    "logic": "Abyss_03[bot2] | Abyss_03 | Lower_Tram",
+    "logic": "Abyss_03[bot2] | Abyss_03[bot1] + (EXTRAPLATFORMS | RIGHTCLAW | WINGS) | Abyss_03[top1] | Abyss_03[door_tram] | Abyss_03[94,3] + (LEFTCLAW | WINGS)",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03[bot2]"
   },
   {
     "sceneName": "Abyss_03",
     "gateName": "top1",
-    "logic": "Abyss_03[top1] | Abyss_03 | Lower_Tram",
+    "logic": "Abyss_03[top1] | Abyss_03[bot2]",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03[top1]"
+  },
+  // Bypass out-transition of Room_Tram because it leads to three possible rooms
+  {
+    "sceneName": "Abyss_03",
+    "gateName": "door_tram",
+    "logic": "Abyss_03[bot2] + TRAM | Room_Tram[14,11]",
+    "oneWayType": "TwoWay",
+    "Name": "Abyss_03[door_tram]"
   },
   {
     "sceneName": "Abyss_03_b",
     "gateName": "left1",
-    "logic": "Abyss_03_b[left1] | Abyss_03_b | Lower_Tram",
+    "logic": "Abyss_03_b[left1] | Abyss_03_b[door_tram] | Abyss_03_b[46,3] + (LEFTCLAW | WINGS)",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03_b[left1]"
   },
   {
+    "sceneName": "Abyss_03_b",
+    "gateName": "door_tram",
+    "logic": "Abyss_03_b[left1] + TRAM | Room_Tram[14,11]",
+    "oneWayType": "TwoWay",
+    "Name": "Abyss_03_b[door_tram]"
+  },
+  {
     "sceneName": "Abyss_03_c",
     "gateName": "right1",
-    "logic": "Abyss_03_c[right1] | Abyss_03_c | Lower_Tram",
+    "logic": "Abyss_03_c[right1] | Abyss_03_c[door_tram] | Abyss_03_c[9,3] + (RIGHTCLAW | WINGS)",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03_c[right1]"
   },
   {
     "sceneName": "Abyss_03_c",
     "gateName": "top1",
-    "logic": "Abyss_03_c[top1] | (Abyss_03_c | Lower_Tram) + (RIGHTCLAW | WINGS | ENEMYPOGOS)",
+    "logic": "Abyss_03_c[top1] | Abyss_03_c[right1] + (RIGHTCLAW | WINGS)",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03_c[top1]"
+  },
+  {
+    "sceneName": "Abyss_03_c",
+    "gateName": "door_tram",
+    "logic": "Abyss_03_c[right1] + TRAM | Room_Tram[14,11]",
+    "oneWayType": "TwoWay",
+    "Name": "Abyss_03_c[door_tram]"
   },
   {
     "sceneName": "Abyss_04",
@@ -3691,7 +3812,7 @@
   {
     "sceneName": "Abyss_22",
     "gateName": "left1",
-    "logic": "Abyss_22[left1] | Can_Stag + Hidden_Station_Stag | Bench-Hidden_Station",
+    "logic": "Abyss_22[left1] | Stag + Hidden_Station_Stag | Bench-Hidden_Station",
     "oneWayType": "TwoWay",
     "Name": "Abyss_22[left1]"
   },
@@ -4391,7 +4512,7 @@
   {
     "sceneName": "Ruins1_29",
     "gateName": "left1",
-    "logic": "Ruins1_29[left1] | Can_Stag + City_Storerooms_Stag | Bench-City_Storerooms",
+    "logic": "Ruins1_29[left1] | Stag + City_Storerooms_Stag | Bench-City_Storerooms",
     "oneWayType": "TwoWay",
     "Name": "Ruins1_29[left1]"
   },
@@ -4722,7 +4843,7 @@
   {
     "sceneName": "Ruins2_08",
     "gateName": "left1",
-    "logic": "Ruins2_08[left1] | Can_Stag + King's_Station_Stag | Bench-King's_Station",
+    "logic": "Ruins2_08[left1] | Stag + King's_Station_Stag | Bench-King's_Station",
     "oneWayType": "TwoWay",
     "Name": "Ruins2_08[left1]"
   },
@@ -4736,37 +4857,51 @@
   {
     "sceneName": "Ruins2_10",
     "gateName": "right1",
-    "logic": "Ruins2_10[right1] | Right_Elevator + Opened_Resting_Grounds_Catacombs_Wall",
+    "logic": "Ruins2_10[right1] | Ruins2_10[left1] + Opened_Resting_Grounds_Catacombs_Wall",
     "oneWayType": "TwoWay",
     "Name": "Ruins2_10[right1]"
   },
   {
     "sceneName": "Ruins2_10",
     "gateName": "left1",
-    "logic": "Ruins2_10[left1] | Right_Elevator",
+    "logic": "Ruins2_10[left1] | Ruins2_10[right1] | Ruins2_10[elev_entrance]",
     "oneWayType": "TwoWay",
     "Name": "Ruins2_10[left1]"
   },
   {
+    "sceneName": "Ruins2_10",
+    "gateName": "elev_entrance",
+    "logic": "Right_Elevator",
+    "oneWayType": "OneWayOut",
+    "Name": "Ruins2_10[elev_entrance]"
+  },
+  {
     "sceneName": "Ruins2_10b",
     "gateName": "right1",
-    "logic": "Ruins2_10b[right1] | (Right_Elevator | Ruins2_10b[right2]) + (LEFTCLAW + WINGS | RIGHTCLAW + WINGS | FULLCLAW) | Ruins2_10b[left1] + (LEFTCLAW | RIGHTCLAW + WINGS)",
+    "logic": "Ruins2_10b[right1] | (Ruins2_10b[left1] | Ruins2_10b[2,49]) + ((RIGHTDASH | RIGHTSUPERDASH) + LEFTCLAW | RIGHTCLAW + WINGS)",
     "oneWayType": "TwoWay",
     "Name": "Ruins2_10b[right1]"
   },
   {
     "sceneName": "Ruins2_10b",
     "gateName": "right2",
-    "logic": "Ruins2_10b[right2] | Ruins2_10b[left1] | Ruins2_10b[right1] | Right_Elevator",
+    "logic": "Ruins2_10b[right2] | Ruins2_10b[elev_entrance] | Ruins2_10b[2,49]",
     "oneWayType": "TwoWay",
     "Name": "Ruins2_10b[right2]"
   },
   {
     "sceneName": "Ruins2_10b",
     "gateName": "left1",
-    "logic": "Ruins2_10b[left1] | (Right_Elevator | Ruins2_10b[right1] | Ruins2_10b[right2]) + Opened_Pleasure_House_Wall + (ANYCLAW + WINGS | FULLCLAW | Ruins2_10b[right1])",
+    "logic": "Ruins2_10b[left1] | Ruins2_10b[right1] + Opened_Pleasure_House_Wall | Ruins2_10b[2,49] + Opened_Pleasure_House_Wall + (LEFTCLAW | (RIGHTCLAW + (LEFTDASH | LEFTSUPERDASH | WINGS)))",
     "oneWayType": "TwoWay",
     "Name": "Ruins2_10b[left1]"
+  },
+  {
+    "sceneName": "Ruins2_10b",
+    "gateName": "elev_entrance",
+    "logic": "Right_Elevator",
+    "oneWayType": "OneWayOut",
+    "Name": "Ruins2_10b[elev_entrance]"
   },
   {
     "sceneName": "Ruins2_11_b",
@@ -4981,7 +5116,7 @@
   {
     "sceneName": "RestingGrounds_09",
     "gateName": "left1",
-    "logic": "RestingGrounds_09[left1] | Can_Stag + Resting_Grounds_Stag | Bench-Grounds_Stag",
+    "logic": "RestingGrounds_09[left1] | Stag + Resting_Grounds_Stag | Bench-Grounds_Stag",
     "oneWayType": "TwoWay",
     "Name": "RestingGrounds_09[left1]"
   },
@@ -5765,14 +5900,14 @@
   {
     "sceneName": "Fungus3_40",
     "gateName": "right1",
-    "logic": "Fungus3_40[right1] | Fungus3_40[top1] + (RIGHTDASH | WINGS | RIGHTCLAW | LEFTCLAW + RIGHTSUPERDASH | ENEMYPOGOS | $SHADESKIP | SPELLAIRSTALL + $CASTSPELL[before:ROOMSOUL,after:ROOMSOUL]) | (Can_Stag + Queen's_Gardens_Stag) | Bench-Gardens_Stag",
+    "logic": "Fungus3_40[right1] | Fungus3_40[top1] + (RIGHTDASH | WINGS | RIGHTCLAW | LEFTCLAW + RIGHTSUPERDASH | ENEMYPOGOS | $SHADESKIP | SPELLAIRSTALL + $CASTSPELL[before:ROOMSOUL,after:ROOMSOUL]) | (Stag + Queen's_Gardens_Stag) | Bench-Gardens_Stag",
     "oneWayType": "TwoWay",
     "Name": "Fungus3_40[right1]"
   },
   {
     "sceneName": "Fungus3_40",
     "gateName": "top1",
-    "logic": "Fungus3_40[top1] | (Fungus3_40[right1] | Can_Stag + Queen's_Gardens_Stag | Bench-Gardens_Stag) + (LEFTCLAW | RIGHTCLAW + LEFTSUPERDASH | WINGS | LEFTDASH)",
+    "logic": "Fungus3_40[top1] | (Fungus3_40[right1] | Stag + Queen's_Gardens_Stag | Bench-Gardens_Stag) + (LEFTCLAW | RIGHTCLAW + LEFTSUPERDASH | WINGS | LEFTDASH)",
     "oneWayType": "TwoWay",
     "Name": "Fungus3_40[top1]"
   },
@@ -5898,7 +6033,7 @@
   {
     "sceneName": "Cliffs_03",
     "gateName": "right1",
-    "logic": "Cliffs_03[right1] | (ALLSTAGS | Stag_Nest_Stag) + Can_Stag",
+    "logic": "Cliffs_03[right1] | (ALLSTAGS | Stag_Nest_Stag) + Stag",
     "oneWayType": "TwoWay",
     "Name": "Cliffs_03[right1]"
   },
@@ -6244,5 +6379,20 @@
     "logic": "White_Palace_20[bot1]",
     "oneWayType": "TwoWay",
     "Name": "White_Palace_20[bot1]"
+  },
+  {
+    "sceneName": "Room_Tram_RG",
+    "gateName": "door1",
+    "logic": "Crossroads_46[door_tram] | Crossroads_46b[door_tram]",
+    "oneWayType": "OneWayOut",
+    "Name": "Room_Tram_RG[door1]"
+  },
+  {
+    "sceneName": "Room_Tram",
+    "gateName": "door1",
+    "logic": "Abyss_03[door_tram] | Abyss_03_b[door_tram] | Abyss_03_c[door_tram]",
+    "oneWayType": "OneWayOut",
+    "Name": "Room_Tram[door1]"
   }
 ]
+//Need to check extra platform logic

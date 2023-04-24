@@ -8,6 +8,42 @@
     "IsMapAreaTransition": false,
     "Sides": "Both"
   },
+  "Room_temple[door1]": {
+    "SceneName": "Room_temple",
+    "DoorName": "door1",
+    "VanillaTarget": "Room_Final_Boss_Atrium[left1]",
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
+  "Room_Final_Boss_Atrium[left1]": {
+    "SceneName": "Room_Final_Boss_Atrium",
+    "DoorName": "left1",
+    "VanillaTarget": "Room_temple[door1]",
+    "Direction": "Left",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
+  "Room_Final_Boss_Atrium[right1]": {
+    "SceneName": "Room_Final_Boss_Atrium",
+    "DoorName": "right1",
+    "VanillaTarget": "Room_Final_Boss_Core[left1]",
+    "Direction": "Right",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
+  "Room_Final_Boss_Core[left1]": {
+    "SceneName": "Room_Final_Boss_Core",
+    "DoorName": "left1",
+    "VanillaTarget": "Room_Final_Boss_Atrium[right1]",
+    "Direction": "Left",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
   "Tutorial_01[right1]": {
     "SceneName": "Tutorial_01",
     "DoorName": "right1",
@@ -143,6 +179,24 @@
     "IsMapAreaTransition": false,
     "Sides": "Both"
   },
+  "Room_shop[door1]": {
+    "SceneName": "Room_shop",
+    "DoorName": "door1",
+    "VanillaTarget": "Room_Sly_Storeroom[top1]",
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
+  "Room_Sly_Storeroom[top1]": {
+    "SceneName": "Room_Sly_Storeroom",
+    "DoorName": "top1",
+    "VanillaTarget": "Room_shop[door1]",
+    "Direction": "Top",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
   "Room_Town_Stag_Station[left1]": {
     "SceneName": "Room_Town_Stag_Station",
     "DoorName": "left1",
@@ -151,6 +205,15 @@
     "IsTitledAreaTransition": false,
     "IsMapAreaTransition": false,
     "Sides": "Both"
+  },
+  "Room_Town_Stag_Station[door_stagExit]": {
+    "SceneName": "Room_Town_Stag_Station",
+    "DoorName": "door_stagExit",
+    "VanillaTarget": null,
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "OneWayOut"
   },
   "Room_mapper[left1]": {
     "SceneName": "Room_mapper",
@@ -170,8 +233,35 @@
     "IsMapAreaTransition": false,
     "Sides": "Both"
   },
+  "Room_Bretta[door1]": {
+    "SceneName": "Room_Bretta",
+    "DoorName": "door1",
+    "VanillaTarget": "Room_Bretta_Basement[top1]",
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
+  "Room_Bretta_Basement[top1]": {
+    "SceneName": "Room_Bretta_Basement",
+    "DoorName": "top1",
+    "VanillaTarget": "Room_Bretta[door1]",
+    "Direction": "Top",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
   "Room_Ouiji[left1]": {
     "SceneName": "Room_Ouiji",
+    "DoorName": "left1",
+    "VanillaTarget": "Room_Jinn[left1]",
+    "Direction": "Left",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
+  "Room_Jinn[left1]": {
+    "SceneName": "Room_Jinn",
     "DoorName": "left1",
     "VanillaTarget": "Town[door_jiji]",
     "Direction": "Left",
@@ -1034,11 +1124,29 @@
     "IsMapAreaTransition": false,
     "Sides": "Both"
   },
+  "Crossroads_46[door_tram]": {
+    "SceneName": "Crossroads_46",
+    "DoorName": "door_tram",
+    "VanillaTarget": "Room_Tram_RG[door1]",
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
   "Crossroads_46b[right1]": {
     "SceneName": "Crossroads_46b",
     "DoorName": "right1",
     "VanillaTarget": "RestingGrounds_02[left1]",
     "Direction": "Right",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
+  "Crossroads_46b[door_tram]": {
+    "SceneName": "Crossroads_46b",
+    "DoorName": "door_tram",
+    "VanillaTarget": "Room_Tram_RG[door1]",
+    "Direction": "Door",
     "IsTitledAreaTransition": false,
     "IsMapAreaTransition": false,
     "Sides": "Both"
@@ -1088,6 +1196,15 @@
     "IsMapAreaTransition": false,
     "Sides": "Both"
   },
+  "Crossroads_49[elev_entrance]": {
+    "SceneName": "Crossroads_49",
+    "DoorName": "elev_entrance",
+    "VanillaTarget": null,
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "OneWayOut"
+  },
   "Crossroads_49b[right1]": {
     "SceneName": "Crossroads_49b",
     "DoorName": "right1",
@@ -1096,6 +1213,15 @@
     "IsTitledAreaTransition": false,
     "IsMapAreaTransition": false,
     "Sides": "Both"
+  },
+  "Crossroads_49b[elev_entrance]": {
+    "SceneName": "Crossroads_49b",
+    "DoorName": "elev_entrance",
+    "VanillaTarget": null,
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "OneWayOut"
   },
   "Crossroads_50[right1]": {
     "SceneName": "Crossroads_50",
@@ -4427,6 +4553,15 @@
     "IsMapAreaTransition": true,
     "Sides": "Both"
   },
+  "Abyss_03[door_tram]": {
+    "SceneName": "Abyss_03",
+    "DoorName": "door_tram",
+    "VanillaTarget": "Room_Tram[door1]",
+    "Direction": "Door",
+    "IsTitledAreaTransition": true,
+    "IsMapAreaTransition": true,
+    "Sides": "Both"
+  },
   "Abyss_03_b[left1]": {
     "SceneName": "Abyss_03_b",
     "DoorName": "left1",
@@ -4434,6 +4569,15 @@
     "Direction": "Left",
     "IsTitledAreaTransition": false,
     "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
+  "Abyss_03_b[door_tram]": {
+    "SceneName": "Abyss_03_b",
+    "DoorName": "door_tram",
+    "VanillaTarget": "Room_Tram[door1]",
+    "Direction": "Door",
+    "IsTitledAreaTransition": true,
+    "IsMapAreaTransition": true,
     "Sides": "Both"
   },
   "Abyss_03_c[right1]": {
@@ -4452,6 +4596,15 @@
     "Direction": "Top",
     "IsTitledAreaTransition": false,
     "IsMapAreaTransition": false,
+    "Sides": "Both"
+  },
+  "Abyss_03_c[door_tram]": {
+    "SceneName": "Abyss_03_c",
+    "DoorName": "door_tram",
+    "VanillaTarget": "Room_Tram[door1]",
+    "Direction": "Door",
+    "IsTitledAreaTransition": true,
+    "IsMapAreaTransition": true,
     "Sides": "Both"
   },
   "Abyss_04[top1]": {
@@ -6101,6 +6254,15 @@
     "IsMapAreaTransition": false,
     "Sides": "Both"
   },
+  "Ruins2_10[elev_entrance]": {
+    "SceneName": "Ruins2_10",
+    "DoorName": "elev_entrance",
+    "VanillaTarget": null,
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "OneWayOut"
+  },
   "Ruins2_10b[right1]": {
     "SceneName": "Ruins2_10b",
     "DoorName": "right1",
@@ -6127,6 +6289,15 @@
     "IsTitledAreaTransition": true,
     "IsMapAreaTransition": false,
     "Sides": "Both"
+  },
+  "Ruins2_10b[elev_entrance]": {
+    "SceneName": "Ruins2_10b",
+    "DoorName": "elev_entrance",
+    "VanillaTarget": null,
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "OneWayOut"
   },
   "Ruins2_11_b[right1]": {
     "SceneName": "Ruins2_11_b",
@@ -8026,5 +8197,23 @@
     "IsTitledAreaTransition": false,
     "IsMapAreaTransition": false,
     "Sides": "Both"
+  },
+  "Room_Tram_RG[door1]": {
+    "SceneName": "Room_Tram_RG",
+    "DoorName": "door1",
+    "VanillaTarget": null,
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "OneWayOut"
+  },
+  "Room_Tram[door1]": {
+    "SceneName": "Room_Tram",
+    "DoorName": "door1",
+    "VanillaTarget": null,
+    "Direction": "Door",
+    "IsTitledAreaTransition": false,
+    "IsMapAreaTransition": false,
+    "Sides": "OneWayOut"
   }
 }

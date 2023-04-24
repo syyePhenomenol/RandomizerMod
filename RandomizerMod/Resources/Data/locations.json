@@ -79,7 +79,7 @@
   },
   "World_Sense": {
     "Name": "World_Sense",
-    "SceneName": "Room_temple",
+    "SceneName": "Room_Final_Boss_Atrium",
     "FlexibleCount": false,
     "AdditionalProgressionPenalty": false
   },
@@ -3601,7 +3601,7 @@
   },
   "Lore_Tablet-World_Sense": {
     "Name": "Lore_Tablet-World_Sense",
-    "SceneName": "Room_temple",
+    "SceneName": "Room_Final_Boss_Atrium",
     "FlexibleCount": false,
     "AdditionalProgressionPenalty": false
   },
