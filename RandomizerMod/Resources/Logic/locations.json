@@ -161,7 +161,7 @@
   },
   {
     "name": "Glowing_Womb",
-    "logic": "Crossroads_22[bot1] + (ANYCLAW | WINGS | BACKGROUNDPOGOS | ENEMYPOGOS)"
+    "logic": "Crossroads_22[9,19]"
   },
   {
     "name": "Nailmaster's_Glory",
@@ -277,7 +277,7 @@
   },
   {
     "name": "Mask_Shard-Crossroads_Goam",
-    "logic": "(Crossroads_13[left1] | Crossroads_13[right1]) + (ANYCLAW | WINGS | ENEMYPOGOS)"
+    "logic": "Crossroads_13[3,22]"
   },
   {
     "name": "Mask_Shard-Stone_Sanctuary",
@@ -653,7 +653,7 @@
   },
   {
     "name": "Whispering_Root-Crossroads",
-    "logic": "Crossroads_07[4,103] + DREAMNAIL"
+    "logic": "Crossroads_07[4,103] + (WINGS | FULLSUPERDASH | ANYDASH | INFECTED) + DREAMNAIL"
   },
   {
     "name": "Whispering_Root-Greenpath",
@@ -703,10 +703,10 @@
     "name": "Whispering_Root-Howling_Cliffs",
     "logic": "Cliffs_01 + (LEFTCLAW | (RIGHTCLAW + FULLDASH) | WINGS | (FULLDASH + ENEMYPOGOS)) + DREAMNAIL"
   },
-  // TODO: Check other movement required for roots
+  // TODO: Check other movement required for orbs. The following can be simplified.
   {
     "name": "Whispering_Root-Ancestral_Mound",
-    "logic": "Crossroads_ShamanTemple[18,60] + DREAMNAIL"
+    "logic": "Crossroads_ShamanTemple[18,60] + (WINGS | FULLCLAW + ENEMYPOGOS) + (ANYCLAW | Defeated_Ancestral_Mound_Baldur | $SHRIEKPOGO[2,before:ROOMSOUL]) + DREAMNAIL + UPWALLBREAK"
   },
   {
     "name": "Whispering_Root-Hive",
@@ -742,7 +742,7 @@
   },
   {
     "name": "Boss_Essence-Failed_Champion",
-    "logic": "Crossroads_10[19,48] + Defeated_False_Knight + Defeated_Failed_Champion"
+    "logic": "Crossroads_10[19,48] + Defeated_Failed_Champion"
   },
   {
     "name": "Boss_Essence-Soul_Tyrant",
@@ -1022,7 +1022,7 @@
   },
   {
     "name": "Crossroads_Stag",
-    "logic": "Crossroads_47[right1] | (Crossroads_Stag + Stag)"
+    "logic": "Crossroads_47[right1]"
   },
   {
     "name": "Greenpath_Stag",

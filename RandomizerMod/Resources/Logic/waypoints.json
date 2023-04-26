@@ -288,7 +288,7 @@
   },
   {
     "name": "Defeated_Failed_Champion",
-    "logic": "(Crossroads_10[left1] | Crossroads_10[right1]) + Defeated_False_Knight + (ANYCLAW | WINGS + INFECTED | $SHRIEKPOGO[2,before:AREASOUL]) + (WINGS | LEFTDASH | LEFTSUPERDASH) + DREAMNAIL + COMBAT[Failed_Champion]",
+    "logic": "Crossroads_10[19,48] + Defeated_False_Knight + (WINGS | LEFTDASH | LEFTSUPERDASH) + DREAMNAIL + COMBAT[Failed_Champion]",
     "Stateless": true
   },
   {
@@ -915,11 +915,11 @@
   },
   {
     "name": "Tutorial_01[4,22]",
-    "logic": "Tutorial_01[right1] + ANYCLAW | Tutorial_01[7,60]"
+    "logic": "Tutorial_01[right1] + (ANYCLAW | $SHRIEKPOGO[1]) | Tutorial_01[7,60]"
   },
   {
     "name": "Tutorial_01[7,60]",
-    "logic": "Tutorial_01[2,65] | Tutorial_01[4,22] + ANYCLAW"
+    "logic": "Tutorial_01[2,65] | Tutorial_01[4,22] + (ANYCLAW | $SHRIEKPOGO[2]) | Tutorial_01[right1] + (WINGS + ENEMYPOGOS + COMPLEXSKIPS)"
   },
   // Logic depends on whether or not flames are randomized. Need to revise
   {
@@ -936,7 +936,7 @@
   },
   {
     "name": "Crossroads_01[35,31]",
-    "logic": "Crossroads_01[top1] + ANYCLAW"
+    "logic": "Crossroads_01[top1] + (ANYCLAW | WINGS + (INFECTED | ($SHADESKIP + (ANYDASH | SPELLAIRSTALL + $CASTSPELL[before:ROOMSOUL]) | $SHADESKIP[2HITS])) | INFECTED + ANYDASH + DAMAGEBOOSTS + $TAKEDAMAGE[3] | $SHRIEKPOGO[5,before:AREASOUL])"
   },
   {
     "name": "Crossroads_04[104,15]",
@@ -944,11 +944,11 @@
   },
   {
     "name": "Crossroads_05[53,16]",
-    "logic": "Crossroads_05[left1] + (RIGHTDASH | WINGS)"
+    "logic": "Crossroads_05[left1] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | ENEMYPOGOS)"
   },
   {
     "name": "Crossroads_07[4,103]",
-    "logic": "Crossroads_07[left1] + (RIGHTCLAW | LEFTCLAW + WINGS) + UPWALLBREAK"
+    "logic": "Crossroads_07[left1] + (RIGHTCLAW | LEFTCLAW + WINGS | $SHRIEKPOGO[5,before:AREASOUL]) + UPWALLBREAK"
   },
   {
     "name": "Crossroads_09[49,4]",
@@ -968,7 +968,7 @@
   },
   {
     "name": "Crossroads_10[5,40]",
-    "logic": "Crossroads_10[2,21] + ANYCLAW | Crossroads_10[8,50]"
+    "logic": "Crossroads_10[2,21] + (ANYCLAW | WINGS + INFECTION | $SHRIEKPOGO[2,before:AREASOUL]) | Crossroads_10[8,50]"
   },
   {
     "name": "Crossroads_10[8,50]",
@@ -978,9 +978,10 @@
     "name": "Crossroads_10[11,27]",
     "logic": "Crossroads_10[right1] | Crossroads_10[2,21] + ANYVERTICAL"
   },
+  // Probably possible to get up by a certain number of shriek pogos
   {
     "name": "Crossroads_10[19,48]",
-    "logic": "Crossroads_10[right1] + (RIGHTCLAW | LEFTCLAW + WINGS) | Crossroads_10[61,53]"
+    "logic": "Crossroads_10[right1] + (RIGHTCLAW | LEFTCLAW + (WINGS | INFECTED)) | Crossroads_10[61,53]"
   },
   {
     "name": "Crossroads_10[21,60]",
@@ -996,31 +997,31 @@
   },
   {
     "name": "Crossroads_13[6,42]",
-    "logic": "Crossroads_13[3,22] + ANYCLAW + WINGS | Crossroads_13[25,19]"
+    "logic": "Crossroads_13[3,22] + (ANYCLAW | WINGS | ENEMYPOGOS) | Crossroads_13[25,19]"
   },
   {
     "name": "Crossroads_13[25,19]",
-    "logic": "Crossroads_13[left1] + ANYVERTICAL | Crossroads_13[3,22] + Crossroads_Mask_Shard_Exit_Wall | Crossroads_13[6,42] + ANYVERTICAL"
+    "logic": "Crossroads_13[left1] + ANYVERTICAL | Crossroads_13[3,22] | Crossroads_13[6,42] + ANYVERTICAL"
   },
   {
     "name": "Crossroads_18[18,14]",
-    "logic": "Crossroads_18[right2] + (LEFTDASH | WINGS | LEFTCLAW)"
+    "logic": "Crossroads_18[right2] + (LEFTDASH | LEFTCLAW | WINGS | RIGHTCLAW + LEFTSUPERDASH + OBSCURESKIPS)"
   },
   {
     "name": "Crossroads_21[7,22]",
-    "logic": "Crossroads_21[left1] + (LEFTSUPERDASH | Glowing_Womb_Entrance_Collapse + ANYVERTICAL)"
+    "logic": "Crossroads_21[left1] + (LEFTSUPERDASH | SPIKETUNNELS + LEFTDASH + (DASHMASTER | SPELLAIRSTALL + $CASTSPELL[2,before:ROOMSOUL,after:ROOMSOUL]) | Glowing_Womb_Entrance_Collapse + ANYVERTICAL)"
   },
   {
     "name": "Crossroads_22[9,19]",
-    "logic": "Crossroads_22[bot1] + ANYVERTICAL"
+    "logic": "Crossroads_22[bot1] + (ANYVERTICAL | BACKGROUNDPOGOS | ENEMYPOGOS)"
   },
   {
     "name": "Crossroads_35[63,23]",
-    "logic": "Crossroads_35[bot1] + RIGHTCLAW | Crossroads_35[58,38]"
+    "logic": "Crossroads_35[bot1] + (RIGHTCLAW | $SHRIEKPOGO[1,before:ITEMSOUL) | Crossroads_35[58,38]"
   },
   {
     "name": "Crossroads_35[58,38]",
-    "logic": "Crossroads_35[right1] + ACID | Crossroads_35[63,23] + RIGHTCLAW"
+    "logic": "Crossroads_35[right1] + (ACID | (((LEFTCLAW + RIGHTSUPERDASH + (RIGHTCLAW | WINGS)) | (RIGHTDASH + WINGS)) + ACIDSKIPS)) | Crossroads_35[63,23] + (RIGHTCLAW | $SHRIEKPOGO[2,before:ITEMSOUL)"
   },
   // TODO: depends on if VS is randomized
   {
@@ -1029,11 +1030,11 @@
   },
   {
     "name": "Crossroads_ShamanTemple[18,60]",
-    "logic": "Crossroads_ShamanTemple[3,39] + WINGS"
+    "logic": "Crossroads_ShamanTemple[3,39] + (WINGS | (RIGHTCLAW | COMPLEXSKIPS) + ENEMYPOGOS)"
   },
   {
     "name": "Crossroads_ShamanTemple[34,21]",
-    "logic": "Crossroads_ShamanTemple[52,21] + Defeated_Ancestral_Mound_Baldur | Crossroads_ShamanTemple[43,8] + ANYCLAW + UPWALLBREAK"
+    "logic": "Crossroads_ShamanTemple[52,21] + Defeated_Ancestral_Mound_Baldur | Crossroads_ShamanTemple[43,8] + (ANYCLAW | WINGS + $SHADESKIP | $SHRIEKPOGO[2,before:ROOMSOUL]) + (UPWALLBREAK | (LEFTSUPERDASH + RIGHTCLAW | RIGHTSUPERDASH + LEFTCLAW) + OBSCURESKIPS)"
   },
   {
     "name": "Crossroads_ShamanTemple[43,8]",
@@ -1045,7 +1046,7 @@
   },
   {
     "name": "Crossroads_ShamanTemple[95,42]",
-    "logic": "Crossroads_ShamanTemple[3,39] + UPWALLBREAK | Crossroads_ShamanTemple[43,8] + UPWALLBREAK"
+    "logic": "(Crossroads_ShamanTemple[3,39] + (UPWALLBREAK | (LEFTSUPERDASH + RIGHTCLAW | RIGHTSUPERDASH + LEFTCLAW) + OBSCURESKIPS)) | Crossroads_ShamanTemple[43,8] + (UPWALLBREAK | LEFTSUPERDASH + RIGHTCLAW + OBSCURESKIPS)"
   },
   // TODO: Below
   //{
