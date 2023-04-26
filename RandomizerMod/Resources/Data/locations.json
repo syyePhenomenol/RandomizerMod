@@ -259,7 +259,7 @@
   },
   "Nailmaster's_Glory": {
     "Name": "Nailmaster's_Glory",
-    "SceneName": "Room_shop",
+    "SceneName": "Room_Sly_Storeroom",
     "FlexibleCount": false,
     "AdditionalProgressionPenalty": false
   },
@@ -1147,7 +1147,7 @@
   },
   "Boss_Essence-Grey_Prince_Zote": {
     "Name": "Boss_Essence-Grey_Prince_Zote",
-    "SceneName": "Room_Bretta",
+    "SceneName": "Room_Bretta_Basement",
     "FlexibleCount": false,
     "AdditionalProgressionPenalty": false
   },
