@@ -895,11 +895,11 @@
   },
   {
     "name": "Bench-Upper_Tram",
-    "logic": "Room_Tram_RG[14,11] + $BENCHRESET | WARPSTARTTOBENCH + Bench-Upper_Tram"
+    "logic": "Upper_Tram + $BENCHRESET | WARPSTARTTOBENCH + Bench-Upper_Tram"
   },
   {
     "name": "Bench-Lower_Tram",
-    "logic": "Room_Tram[14,11] + $BENCHRESET | WARPSTARTTOBENCH + Bench-Lower_Tram"
+    "logic": "Lower_Tram + $BENCHRESET | WARPSTARTTOBENCH + Bench-Lower_Tram"
   },
   {
     "name": "Room_Final_Boss_Core[23,6]",
@@ -907,7 +907,7 @@
   },
   {
     "name": "Room_Town_Stag_Station[24,20]",
-    "logic": "Room_Town_Stag_Station[left1] | Room_Town_Stag_Station[door_stagExit]"
+    "logic": "Room_Town_Stag_Station[left1] | Stag"
   },
   {
     "name": "Tutorial_01[2,65]",
@@ -1459,11 +1459,11 @@
     "logic": "Abyss_05[left1] | Abyss_05[right1] | Warp-White_Palace_Entrance_to_Palace_Grounds | Warp-White_Palace_Atrium_to_Palace_Grounds"
   },
   {
-    "name": "Room_Tram_RG[14,11]",
-    "logic": "Room_Tram_RG[door1] | Bench-Upper_Tram"
+    "name": "Upper_Tram",
+    "logic": "(Crossroads_46[left1] | Crossroads_46b[right1]) + TRAM | Bench-Upper_Tram"
   },
   {
-    "name": "Room_Tram[14,11]",
-    "logic": "Room_Tram[door1] | Bench-Lower_Tram"
+    "name": "Lower_Tram",
+    "logic": "(Abyss_03[bot2] | Abyss_03_b[left1] | Abyss_03_c[right1]) + TRAM | Bench-Lower_Tram"
   }
 ]

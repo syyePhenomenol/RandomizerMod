@@ -161,13 +161,6 @@
     "Name": "Room_Town_Stag_Station[left1]"
   },
   {
-    "sceneName": "Room_Town_Stag_Station",
-    "gateName": "door_stagExit",
-    "logic": "Stag",
-    "oneWayType": "OneWayOut",
-    "Name": "Room_Town_Stag_Station[door_stagExit]"
-  },
-  {
     "sceneName": "Room_mapper",
     "gateName": "left1",
     "logic": "Room_mapper[left1]",
@@ -201,13 +194,6 @@
     "logic": "Room_Ouiji[left1]",
     "oneWayType": "TwoWay",
     "Name": "Room_Ouiji[left1]"
-  },
-  {
-    "sceneName": "Room_Jinn",
-    "gateName": "left1",
-    "logic": "Room_Jinn[left1] | Room_Ouiji[left1]",
-    "oneWayType": "TwoWay",
-    "Name": "Room_Jinn[left1]"
   },
   {
     "sceneName": "Grimm_Divine",
@@ -338,7 +324,7 @@
   {
     "sceneName": "Crossroads_04",
     "gateName": "door_charmshop",
-    "logic": "Crossroads_04[door_charmshop] | Crossroads_04[door_Mender_House] + (RIGHTDASH | RIGHTCLAW | WINGS) | Crossroads_04[right1] | Bench-Salubra",
+    "logic": "Crossroads_04[door_charmshop] | Crossroads_04[door_Mender_House] + (RIGHTDASH | RIGHTCLAW | WINGS) | Crossroads_04[right1] | Crossroads_04[104,15] + RIGHTSUPERDASH | Bench-Salubra",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_04[door_charmshop]"
   },
@@ -870,30 +856,16 @@
   {
     "sceneName": "Crossroads_46",
     "gateName": "left1",
-    "logic": "Crossroads_46[left1] | Crossroads_46[door_tram]",
+    "logic": "Crossroads_46[left1] | Upper_Tram",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_46[left1]"
   },
   {
-    "sceneName": "Crossroads_46",
-    "gateName": "door_tram",
-    "logic": "Crossroads_46[left1] + TRAM | Room_Tram_RG[14,11]",
-    "oneWayType": "TwoWay",
-    "Name": "Crossroads_46[door_tram]"
-  },
-  {
     "sceneName": "Crossroads_46b",
     "gateName": "right1",
-    "logic": "Crossroads_46b[right1] | Crossroads_46b[door_tram]",
+    "logic": "Crossroads_46b[right1] | Upper_Tram",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_46b[right1]"
-  },
-  {
-    "sceneName": "Crossroads_46b",
-    "gateName": "door_tram",
-    "logic": "Crossroads_46b[right1] + TRAM | Room_Tram_RG[14,11]",
-    "oneWayType": "TwoWay",
-    "Name": "Crossroads_46b[door_tram]"
   },
   {
     "sceneName": "Crossroads_ShamanTemple",
@@ -919,37 +891,23 @@
   {
     "sceneName": "Crossroads_49",
     "gateName": "right1",
-    "logic": "Crossroads_49[right1] | Crossroads_49[left1] + Activated_Left_Elevator | Crossroads_49[elev_entrance]",
+    "logic": "Crossroads_49[right1] | Crossroads_49[left1] + Activated_Left_Elevator | Left_Elevator",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_49[right1]"
   },
   {
     "sceneName": "Crossroads_49",
     "gateName": "left1",
-    "logic": "Crossroads_49[left1] | Crossroads_49[right1] + Activated_Left_Elevator | Crossroads_49[elev_entrance]",
+    "logic": "Crossroads_49[left1] | Crossroads_49[right1] + Activated_Left_Elevator | Left_Elevator",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_49[left1]"
   },
   {
-    "sceneName": "Crossroads_49",
-    "gateName": "elev_entrance",
-    "logic": "Left_Elevator",
-    "oneWayType": "OneWayOut",
-    "Name": "Crossroads_49[elev_entrance]"
-  },
-  {
     "sceneName": "Crossroads_49b",
     "gateName": "right1",
-    "logic": "Crossroads_49b[right1] | Crossroads_49b[elev_entrance]",
+    "logic": "Crossroads_49b[right1] | Left_Elevator",
     "oneWayType": "TwoWay",
     "Name": "Crossroads_49b[right1]"
-  },
-  {
-    "sceneName": "Crossroads_49b",
-    "gateName": "elev_entrance",
-    "logic": "Left_Elevator",
-    "oneWayType": "OneWayOut",
-    "Name": "Crossroads_49b[elev_entrance]"
   },
   // TODO: Below
   {
@@ -3531,7 +3489,7 @@
   {
     "sceneName": "Abyss_03",
     "gateName": "bot2",
-    "logic": "Abyss_03[bot2] | Abyss_03[bot1] + (EXTRAPLATFORMS | RIGHTCLAW | WINGS) | Abyss_03[top1] | Abyss_03[door_tram] | Abyss_03[94,3] + (LEFTCLAW | WINGS)",
+    "logic": "Abyss_03[bot2] | Abyss_03[bot1] + (EXTRAPLATFORMS | RIGHTCLAW | WINGS) | Abyss_03[top1] | Abyss_03[94,3] + (LEFTCLAW | WINGS) | Lower_Tram",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03[bot2]"
   },
@@ -3542,32 +3500,17 @@
     "oneWayType": "TwoWay",
     "Name": "Abyss_03[top1]"
   },
-  // Bypass out-transition of Room_Tram because it leads to three possible rooms
-  {
-    "sceneName": "Abyss_03",
-    "gateName": "door_tram",
-    "logic": "Abyss_03[bot2] + TRAM | Room_Tram[14,11]",
-    "oneWayType": "TwoWay",
-    "Name": "Abyss_03[door_tram]"
-  },
   {
     "sceneName": "Abyss_03_b",
     "gateName": "left1",
-    "logic": "Abyss_03_b[left1] | Abyss_03_b[door_tram] | Abyss_03_b[46,3] + (LEFTCLAW | WINGS)",
+    "logic": "Abyss_03_b[left1] | Abyss_03_b[46,3] + (LEFTCLAW | WINGS) | Lower_Tram",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03_b[left1]"
   },
   {
-    "sceneName": "Abyss_03_b",
-    "gateName": "door_tram",
-    "logic": "Abyss_03_b[left1] + TRAM | Room_Tram[14,11]",
-    "oneWayType": "TwoWay",
-    "Name": "Abyss_03_b[door_tram]"
-  },
-  {
     "sceneName": "Abyss_03_c",
     "gateName": "right1",
-    "logic": "Abyss_03_c[right1] | Abyss_03_c[door_tram] | Abyss_03_c[9,3] + (RIGHTCLAW | WINGS)",
+    "logic": "Abyss_03_c[right1] | Abyss_03_c[9,3] + (RIGHTCLAW | WINGS) | Lower_Tram",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03_c[right1]"
   },
@@ -3577,13 +3520,6 @@
     "logic": "Abyss_03_c[top1] | Abyss_03_c[right1] + (RIGHTCLAW | WINGS)",
     "oneWayType": "TwoWay",
     "Name": "Abyss_03_c[top1]"
-  },
-  {
-    "sceneName": "Abyss_03_c",
-    "gateName": "door_tram",
-    "logic": "Abyss_03_c[right1] + TRAM | Room_Tram[14,11]",
-    "oneWayType": "TwoWay",
-    "Name": "Abyss_03_c[door_tram]"
   },
   {
     "sceneName": "Abyss_04",
@@ -4864,16 +4800,9 @@
   {
     "sceneName": "Ruins2_10",
     "gateName": "left1",
-    "logic": "Ruins2_10[left1] | Ruins2_10[right1] | Ruins2_10[elev_entrance]",
+    "logic": "Ruins2_10[left1] | Ruins2_10[right1] | Right_Elevator",
     "oneWayType": "TwoWay",
     "Name": "Ruins2_10[left1]"
-  },
-  {
-    "sceneName": "Ruins2_10",
-    "gateName": "elev_entrance",
-    "logic": "Right_Elevator",
-    "oneWayType": "OneWayOut",
-    "Name": "Ruins2_10[elev_entrance]"
   },
   {
     "sceneName": "Ruins2_10b",
@@ -4885,7 +4814,7 @@
   {
     "sceneName": "Ruins2_10b",
     "gateName": "right2",
-    "logic": "Ruins2_10b[right2] | Ruins2_10b[elev_entrance] | Ruins2_10b[2,49]",
+    "logic": "Ruins2_10b[right2] | Ruins2_10b[2,49] | Right_Elevator",
     "oneWayType": "TwoWay",
     "Name": "Ruins2_10b[right2]"
   },
@@ -4895,13 +4824,6 @@
     "logic": "Ruins2_10b[left1] | Ruins2_10b[right1] + Opened_Pleasure_House_Wall | Ruins2_10b[2,49] + Opened_Pleasure_House_Wall + (LEFTCLAW | (RIGHTCLAW + (LEFTDASH | LEFTSUPERDASH | WINGS)))",
     "oneWayType": "TwoWay",
     "Name": "Ruins2_10b[left1]"
-  },
-  {
-    "sceneName": "Ruins2_10b",
-    "gateName": "elev_entrance",
-    "logic": "Right_Elevator",
-    "oneWayType": "OneWayOut",
-    "Name": "Ruins2_10b[elev_entrance]"
   },
   {
     "sceneName": "Ruins2_11_b",
@@ -6379,20 +6301,6 @@
     "logic": "White_Palace_20[bot1]",
     "oneWayType": "TwoWay",
     "Name": "White_Palace_20[bot1]"
-  },
-  {
-    "sceneName": "Room_Tram_RG",
-    "gateName": "door1",
-    "logic": "Crossroads_46[door_tram] | Crossroads_46b[door_tram]",
-    "oneWayType": "OneWayOut",
-    "Name": "Room_Tram_RG[door1]"
-  },
-  {
-    "sceneName": "Room_Tram",
-    "gateName": "door1",
-    "logic": "Abyss_03[door_tram] | Abyss_03_b[door_tram] | Abyss_03_c[door_tram]",
-    "oneWayType": "OneWayOut",
-    "Name": "Room_Tram[door1]"
   }
 ]
 //Need to check extra platform logic
