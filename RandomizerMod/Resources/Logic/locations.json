@@ -1769,7 +1769,7 @@
   },
   {
     "name": "Geo_Rock-Fungal_Core_Above_Elder",
-    "logic": "Fungus2_30[top1] + WINGS"
+    "logic": "Fungus2_30[top1] + (WINGS + (ANYCLAW | ENEMYPOGOS))"
   },
   {
     "name": "Geo_Rock-Queen's_Gardens_Acid_Entrance",
