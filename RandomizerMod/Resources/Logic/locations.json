@@ -425,7 +425,7 @@
   },
   {
     "name": "Rancid_Egg-Fungal_Core",
-    "logic": "Fungus2_29[right1] + (ANYCLAW + WINGS | $SHRIEKPOGO[3,before:MAPAREASOUL]) | Fungus2_29[bot1] + (LEFTCLAW | WINGS | $SHRIEKPOGO[3,before:ROOMSOUL])"
+    "logic": "Fungus2_29[right1] + (ANYCLAW + WINGS | $SHRIEKPOGO[3,before:MAPAREASOUL]) | Fungus2_29[bot1] + (LEFTCLAW | WINGS + ENEMYPOGOS | $SHRIEKPOGO[3,before:ROOMSOUL])"
   },
   {
     "name": "Rancid_Egg-Queen's_Gardens",
@@ -2165,7 +2165,7 @@
   },
   {
     "name": "Soul_Totem-Fungal_Core",
-    "logic": "Fungus2_29[right1] + (ANYCLAW + WINGS | $SHRIEKPOGO[3,before:MAPAREASOUL]) | Fungus2_29[bot1] + (LEFTCLAW | WINGS | $SHRIEKPOGO[3,before:ROOMSOUL])"
+    "logic": "Fungus2_29[right1] + (ANYCLAW + WINGS | $SHRIEKPOGO[3,before:MAPAREASOUL]) | Fungus2_29[bot1] + (LEFTCLAW | WINGS + ENEMYPOGOS | $SHRIEKPOGO[3,before:ROOMSOUL])"
   },
   {
     "name": "Soul_Totem-Top_Left_Queen's_Gardens",
